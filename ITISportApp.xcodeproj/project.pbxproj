@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EBC81920282BFCB200762FA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC8191F282BFCB200762FA7 /* AppDelegate.swift */; };
+		EBC81922282BFCB200762FA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC81921282BFCB200762FA7 /* SceneDelegate.swift */; };
+		EBC81924282BFCB200762FA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC81923282BFCB200762FA7 /* ViewController.swift */; };
+		EBC81927282BFCB200762FA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC81925282BFCB200762FA7 /* Main.storyboard */; };
+		EBC8192A282BFCB200762FA7 /* ITISportApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EBC81928282BFCB200762FA7 /* ITISportApp.xcdatamodeld */; };
+		EBC8192C282BFCB300762FA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC8192B282BFCB300762FA7 /* Assets.xcassets */; };
+		EBC8192F282BFCB300762FA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC8192D282BFCB300762FA7 /* LaunchScreen.storyboard */; };
+		EBC8193A282BFCB300762FA7 /* ITISportAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC81939282BFCB300762FA7 /* ITISportAppTests.swift */; };
+		EBC81945282BFCB300762FA7 /* ITISportAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC81944282BFCB300762FA7 /* ITISportAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EBC81936282BFCB300762FA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBC81914282BFCB200762FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBC8191B282BFCB200762FA7;
+			remoteInfo = ITISportApp;
+		};
+		EBC81941282BFCB300762FA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBC81914282BFCB200762FA7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBC8191B282BFCB200762FA7;
+			remoteInfo = ITISportApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EBC8191C282BFCB200762FA7 /* ITISportApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITISportApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBC8191F282BFCB200762FA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EBC81921282BFCB200762FA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EBC81923282BFCB200762FA7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EBC81926282BFCB200762FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EBC81929282BFCB200762FA7 /* ITISportApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ITISportApp.xcdatamodel; sourceTree = "<group>"; };
+		EBC8192B282BFCB300762FA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EBC8192E282BFCB300762FA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EBC81930282BFCB300762FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBC81935282BFCB300762FA7 /* ITISportAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITISportAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBC81939282BFCB300762FA7 /* ITISportAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITISportAppTests.swift; sourceTree = "<group>"; };
+		EBC8193B282BFCB300762FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EBC81940282BFCB300762FA7 /* ITISportAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITISportAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBC81944282BFCB300762FA7 /* ITISportAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITISportAppUITests.swift; sourceTree = "<group>"; };
+		EBC81946282BFCB300762FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EBC81919282BFCB200762FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC81932282BFCB300762FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC8193D282BFCB300762FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EBC81913282BFCB200762FA7 = {
+			isa = PBXGroup;
+			children = (
+				EBC8191E282BFCB200762FA7 /* ITISportApp */,
+				EBC81938282BFCB300762FA7 /* ITISportAppTests */,
+				EBC81943282BFCB300762FA7 /* ITISportAppUITests */,
+				EBC8191D282BFCB200762FA7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EBC8191D282BFCB200762FA7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EBC8191C282BFCB200762FA7 /* ITISportApp.app */,
+				EBC81935282BFCB300762FA7 /* ITISportAppTests.xctest */,
+				EBC81940282BFCB300762FA7 /* ITISportAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EBC8191E282BFCB200762FA7 /* ITISportApp */ = {
+			isa = PBXGroup;
+			children = (
+				EBC8191F282BFCB200762FA7 /* AppDelegate.swift */,
+				EBC81921282BFCB200762FA7 /* SceneDelegate.swift */,
+				EBC81923282BFCB200762FA7 /* ViewController.swift */,
+				EBC81925282BFCB200762FA7 /* Main.storyboard */,
+				EBC8192B282BFCB300762FA7 /* Assets.xcassets */,
+				EBC8192D282BFCB300762FA7 /* LaunchScreen.storyboard */,
+				EBC81930282BFCB300762FA7 /* Info.plist */,
+				EBC81928282BFCB200762FA7 /* ITISportApp.xcdatamodeld */,
+			);
+			path = ITISportApp;
+			sourceTree = "<group>";
+		};
+		EBC81938282BFCB300762FA7 /* ITISportAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				EBC81939282BFCB300762FA7 /* ITISportAppTests.swift */,
+				EBC8193B282BFCB300762FA7 /* Info.plist */,
+			);
+			path = ITISportAppTests;
+			sourceTree = "<group>";
+		};
+		EBC81943282BFCB300762FA7 /* ITISportAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EBC81944282BFCB300762FA7 /* ITISportAppUITests.swift */,
+				EBC81946282BFCB300762FA7 /* Info.plist */,
+			);
+			path = ITISportAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EBC8191B282BFCB200762FA7 /* ITISportApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBC81949282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportApp" */;
+			buildPhases = (
+				EBC81918282BFCB200762FA7 /* Sources */,
+				EBC81919282BFCB200762FA7 /* Frameworks */,
+				EBC8191A282BFCB200762FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ITISportApp;
+			productName = ITISportApp;
+			productReference = EBC8191C282BFCB200762FA7 /* ITISportApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EBC81934282BFCB300762FA7 /* ITISportAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBC8194C282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportAppTests" */;
+			buildPhases = (
+				EBC81931282BFCB300762FA7 /* Sources */,
+				EBC81932282BFCB300762FA7 /* Frameworks */,
+				EBC81933282BFCB300762FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBC81937282BFCB300762FA7 /* PBXTargetDependency */,
+			);
+			name = ITISportAppTests;
+			productName = ITISportAppTests;
+			productReference = EBC81935282BFCB300762FA7 /* ITISportAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EBC8193F282BFCB300762FA7 /* ITISportAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EBC8194F282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportAppUITests" */;
+			buildPhases = (
+				EBC8193C282BFCB300762FA7 /* Sources */,
+				EBC8193D282BFCB300762FA7 /* Frameworks */,
+				EBC8193E282BFCB300762FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EBC81942282BFCB300762FA7 /* PBXTargetDependency */,
+			);
+			name = ITISportAppUITests;
+			productName = ITISportAppUITests;
+			productReference = EBC81940282BFCB300762FA7 /* ITISportAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EBC81914282BFCB200762FA7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = ititeam;
+				TargetAttributes = {
+					EBC8191B282BFCB200762FA7 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					EBC81934282BFCB300762FA7 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = EBC8191B282BFCB200762FA7;
+					};
+					EBC8193F282BFCB300762FA7 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = EBC8191B282BFCB200762FA7;
+					};
+				};
+			};
+			buildConfigurationList = EBC81917282BFCB200762FA7 /* Build configuration list for PBXProject "ITISportApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EBC81913282BFCB200762FA7;
+			productRefGroup = EBC8191D282BFCB200762FA7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EBC8191B282BFCB200762FA7 /* ITISportApp */,
+				EBC81934282BFCB300762FA7 /* ITISportAppTests */,
+				EBC8193F282BFCB300762FA7 /* ITISportAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EBC8191A282BFCB200762FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC8192F282BFCB300762FA7 /* LaunchScreen.storyboard in Resources */,
+				EBC8192C282BFCB300762FA7 /* Assets.xcassets in Resources */,
+				EBC81927282BFCB200762FA7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC81933282BFCB300762FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC8193E282BFCB300762FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EBC81918282BFCB200762FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC81924282BFCB200762FA7 /* ViewController.swift in Sources */,
+				EBC81920282BFCB200762FA7 /* AppDelegate.swift in Sources */,
+				EBC81922282BFCB200762FA7 /* SceneDelegate.swift in Sources */,
+				EBC8192A282BFCB200762FA7 /* ITISportApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC81931282BFCB300762FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC8193A282BFCB300762FA7 /* ITISportAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBC8193C282BFCB300762FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EBC81945282BFCB300762FA7 /* ITISportAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EBC81937282BFCB300762FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBC8191B282BFCB200762FA7 /* ITISportApp */;
+			targetProxy = EBC81936282BFCB300762FA7 /* PBXContainerItemProxy */;
+		};
+		EBC81942282BFCB300762FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EBC8191B282BFCB200762FA7 /* ITISportApp */;
+			targetProxy = EBC81941282BFCB300762FA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EBC81925282BFCB200762FA7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBC81926282BFCB200762FA7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EBC8192D282BFCB300762FA7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EBC8192E282BFCB300762FA7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EBC81947282BFCB300762FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EBC81948282BFCB300762FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EBC8194A282BFCB300762FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ITISportApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iti.ITISportApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EBC8194B282BFCB300762FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ITISportApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iti.ITISportApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EBC8194D282BFCB300762FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ITISportAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iti.ITISportAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ITISportApp.app/ITISportApp";
+			};
+			name = Debug;
+		};
+		EBC8194E282BFCB300762FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ITISportAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iti.ITISportAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ITISportApp.app/ITISportApp";
+			};
+			name = Release;
+		};
+		EBC81950282BFCB300762FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ITISportAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iti.ITISportAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ITISportApp;
+			};
+			name = Debug;
+		};
+		EBC81951282BFCB300762FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ITISportAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = iti.ITISportAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ITISportApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EBC81917282BFCB200762FA7 /* Build configuration list for PBXProject "ITISportApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBC81947282BFCB300762FA7 /* Debug */,
+				EBC81948282BFCB300762FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBC81949282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBC8194A282BFCB300762FA7 /* Debug */,
+				EBC8194B282BFCB300762FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBC8194C282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBC8194D282BFCB300762FA7 /* Debug */,
+				EBC8194E282BFCB300762FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EBC8194F282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EBC81950282BFCB300762FA7 /* Debug */,
+				EBC81951282BFCB300762FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EBC81928282BFCB200762FA7 /* ITISportApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EBC81929282BFCB200762FA7 /* ITISportApp.xcdatamodel */,
+			);
+			currentVersion = EBC81929282BFCB200762FA7 /* ITISportApp.xcdatamodel */;
+			path = ITISportApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EBC81914282BFCB200762FA7 /* Project object */;
+}
