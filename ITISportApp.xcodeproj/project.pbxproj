@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86021E573BBFE29454A983ED /* Pods_ITISportApp_ITISportAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED0E46D8BC387DC45D69524 /* Pods_ITISportApp_ITISportAppUITests.framework */; };
+		87CCBC5E81A1307366721699 /* Pods_ITISportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */; };
+		9BAF49D7C72EB3B90FF7FE38 /* Pods_ITISportAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4942DA0579E6DAA97353900E /* Pods_ITISportAppTests.framework */; };
 		EBB6B6EC282D4E41009A40ED /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6EB282D4E41009A40ED /* Sport.swift */; };
 		EBB6B6EE282D4EAD009A40ED /* MySportResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */; };
 		EBB6B6F1282D4F62009A40ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6F0282D4F62009A40ED /* NetworkService.swift */; };
@@ -44,6 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		002434BD50E88278F4DCD1E4 /* Pods-ITISportApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportApp.release.xcconfig"; path = "Target Support Files/Pods-ITISportApp/Pods-ITISportApp.release.xcconfig"; sourceTree = "<group>"; };
+		0E17A0E680F0829D9D3CA24F /* Pods-ITISportAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportAppTests.release.xcconfig"; path = "Target Support Files/Pods-ITISportAppTests/Pods-ITISportAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		2CF5B139F96795A7D1560FED /* Pods-ITISportApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportApp.debug.xcconfig"; path = "Target Support Files/Pods-ITISportApp/Pods-ITISportApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4942DA0579E6DAA97353900E /* Pods_ITISportAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISportAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8829578BE323E88148AE99AA /* Pods-ITISportAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ITISportAppTests/Pods-ITISportAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9ED0E46D8BC387DC45D69524 /* Pods_ITISportApp_ITISportAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISportApp_ITISportAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF19A620EFA65B0A159F6563 /* Pods-ITISportApp-ITISportAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISportApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBB6B6EB282D4E41009A40ED /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySportResult.swift; sourceTree = "<group>"; };
 		EBB6B6F0282D4F62009A40ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -63,6 +74,7 @@
 		EBC81940282BFCB300762FA7 /* ITISportAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ITISportAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC81944282BFCB300762FA7 /* ITISportAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITISportAppUITests.swift; sourceTree = "<group>"; };
 		EBC81946282BFCB300762FA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F27EEEFD47231AEDB26222C0 /* Pods-ITISportApp-ITISportAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportApp-ITISportAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FF424696282C123900639903 /* SportCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		FF42469E282C281300639903 /* FavoritViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritViewController.swift; sourceTree = "<group>"; };
 		FF4246A0282C298E00639903 /* LeagsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeagsViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CCBC5E81A1307366721699 /* Pods_ITISportApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BAF49D7C72EB3B90FF7FE38 /* Pods_ITISportAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,12 +102,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86021E573BBFE29454A983ED /* Pods_ITISportApp_ITISportAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		261CD54743E0A6E4E83FFC82 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */,
+				9ED0E46D8BC387DC45D69524 /* Pods_ITISportApp_ITISportAppUITests.framework */,
+				4942DA0579E6DAA97353900E /* Pods_ITISportAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E0EC25DB061197313D56BF45 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CF5B139F96795A7D1560FED /* Pods-ITISportApp.debug.xcconfig */,
+				002434BD50E88278F4DCD1E4 /* Pods-ITISportApp.release.xcconfig */,
+				F27EEEFD47231AEDB26222C0 /* Pods-ITISportApp-ITISportAppUITests.debug.xcconfig */,
+				DF19A620EFA65B0A159F6563 /* Pods-ITISportApp-ITISportAppUITests.release.xcconfig */,
+				8829578BE323E88148AE99AA /* Pods-ITISportAppTests.debug.xcconfig */,
+				0E17A0E680F0829D9D3CA24F /* Pods-ITISportAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		EBB6B6E9282D4D7F009A40ED /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +201,8 @@
 				EBC81938282BFCB300762FA7 /* ITISportAppTests */,
 				EBC81943282BFCB300762FA7 /* ITISportAppUITests */,
 				EBC8191D282BFCB200762FA7 /* Products */,
+				E0EC25DB061197313D56BF45 /* Pods */,
+				261CD54743E0A6E4E83FFC82 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,9 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC81949282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportApp" */;
 			buildPhases = (
+				6323DBCD51347C37C02FA3C3 /* [CP] Check Pods Manifest.lock */,
 				EBC81918282BFCB200762FA7 /* Sources */,
 				EBC81919282BFCB200762FA7 /* Frameworks */,
 				EBC8191A282BFCB200762FA7 /* Resources */,
+				5762C07DC1D3D819609D2ED5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +278,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC8194C282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportAppTests" */;
 			buildPhases = (
+				D730421C528244B08704616C /* [CP] Check Pods Manifest.lock */,
 				EBC81931282BFCB300762FA7 /* Sources */,
 				EBC81932282BFCB300762FA7 /* Frameworks */,
 				EBC81933282BFCB300762FA7 /* Resources */,
@@ -253,9 +297,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBC8194F282BFCB300762FA7 /* Build configuration list for PBXNativeTarget "ITISportAppUITests" */;
 			buildPhases = (
+				B261128791A425682AA8DF96 /* [CP] Check Pods Manifest.lock */,
 				EBC8193C282BFCB300762FA7 /* Sources */,
 				EBC8193D282BFCB300762FA7 /* Frameworks */,
 				EBC8193E282BFCB300762FA7 /* Resources */,
+				0277ADDF4DE3A168A799C057 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +382,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0277ADDF4DE3A168A799C057 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5762C07DC1D3D819609D2ED5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ITISportApp/Pods-ITISportApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ITISportApp/Pods-ITISportApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ITISportApp/Pods-ITISportApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6323DBCD51347C37C02FA3C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ITISportApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B261128791A425682AA8DF96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ITISportApp-ITISportAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D730421C528244B08704616C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ITISportAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EBC81918282BFCB200762FA7 /* Sources */ = {
@@ -524,6 +673,7 @@
 		};
 		EBC8194A282BFCB300762FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CF5B139F96795A7D1560FED /* Pods-ITISportApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +691,7 @@
 		};
 		EBC8194B282BFCB300762FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 002434BD50E88278F4DCD1E4 /* Pods-ITISportApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -558,6 +709,7 @@
 		};
 		EBC8194D282BFCB300762FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8829578BE323E88148AE99AA /* Pods-ITISportAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -579,6 +731,7 @@
 		};
 		EBC8194E282BFCB300762FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E17A0E680F0829D9D3CA24F /* Pods-ITISportAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -600,6 +753,7 @@
 		};
 		EBC81950282BFCB300762FA7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F27EEEFD47231AEDB26222C0 /* Pods-ITISportApp-ITISportAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -619,6 +773,7 @@
 		};
 		EBC81951282BFCB300762FA7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF19A620EFA65B0A159F6563 /* Pods-ITISportApp-ITISportAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
