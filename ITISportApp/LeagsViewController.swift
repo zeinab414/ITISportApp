@@ -16,7 +16,7 @@ class LeagsViewController: UIViewController,UITableViewDataSource  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeagsCell", for: indexPath) as! LeagesTableViewCell
         cell.leagsName.text = "Leag1"
-        cell.leagsImage.image = UIImage(named: "sport.jpeg")
+       // cell.leagsImage.image = UIImage(named: "sport.jpeg")
         return cell
     }
     
