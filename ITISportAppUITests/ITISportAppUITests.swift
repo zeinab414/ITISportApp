@@ -7,6 +7,8 @@
 //
 
 import XCTest
+//import Alamofire
+//import SwiftyJSON
 
 class ITISportAppUITests: XCTestCase {
 

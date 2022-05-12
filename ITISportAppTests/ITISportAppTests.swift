@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import ITISportApp
+
 
 class ITISportAppTests: XCTestCase {
 

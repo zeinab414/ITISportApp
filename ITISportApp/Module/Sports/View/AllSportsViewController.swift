@@ -52,7 +52,7 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
         presenter = AllSportsPresenter(NWService: NetworkService())
         presenter.attachView(view: self)
         
-        presenter.getSports()
+        presenter.getSportsFromAF()
     }
 
 
@@ -65,8 +65,8 @@ extension AllSportsViewController : SportsProtocol {
     }
     func renderTableView(){
         
-        resultView = presenter.result.map({ (item) -> ResultView in
-            var res:ResultView=ResultView(title:item.strSport ?? "",image:item.strSportThumb ?? "")
+        resultView = presenter.resultFromAF.map({ (item) -> ResultView in
+            var res:ResultView=ResultView(title:item.title ?? "",image:item.image ?? "")
             return res
         })
        self.allSportsCollectionView.reloadData()

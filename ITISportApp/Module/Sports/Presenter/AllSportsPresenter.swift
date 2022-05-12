@@ -10,6 +10,7 @@ import Foundation
 
 class AllSportsPresenter {
     var result : [Sport]! // model
+    var resultFromAF:[ResultView]=[]
       weak var view : SportsProtocol!  // DI
       
       init(NWService : SportService){
@@ -32,4 +33,17 @@ class AllSportsPresenter {
               }
           }
       }
+    
+   func getSportsFromAF(){
+          let service=NetworkService()
+          service.fetchSportResultWithAF{[weak self] (result1) in
+             // print(result1?.sports[2].strSport ?? "")
+              self?.resultFromAF = result1!
+              DispatchQueue.main.async {
+                  self?.view.stopAnimating()
+                  self?.view.renderTableView()
+              }
+          }
+      }
+        
 }

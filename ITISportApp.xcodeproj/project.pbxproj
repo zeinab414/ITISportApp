@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		86021E573BBFE29454A983ED /* Pods_ITISportApp_ITISportAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED0E46D8BC387DC45D69524 /* Pods_ITISportApp_ITISportAppUITests.framework */; };
 		87CCBC5E81A1307366721699 /* Pods_ITISportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */; };
 		9BAF49D7C72EB3B90FF7FE38 /* Pods_ITISportAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4942DA0579E6DAA97353900E /* Pods_ITISportAppTests.framework */; };
+		EB1F5A26282DA85600D72A3C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB1F5A25282DA85600D72A3C /* Alamofire */; };
 		EBB6B6EC282D4E41009A40ED /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6EB282D4E41009A40ED /* Sport.swift */; };
 		EBB6B6EE282D4EAD009A40ED /* MySportResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */; };
 		EBB6B6F1282D4F62009A40ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6F0282D4F62009A40ED /* NetworkService.swift */; };
@@ -87,6 +88,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87CCBC5E81A1307366721699 /* Pods_ITISportApp.framework in Frameworks */,
+				EB1F5A26282DA85600D72A3C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,7 +131,6 @@
 				8829578BE323E88148AE99AA /* Pods-ITISportAppTests.debug.xcconfig */,
 				0E17A0E680F0829D9D3CA24F /* Pods-ITISportAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -270,6 +271,9 @@
 			dependencies = (
 			);
 			name = ITISportApp;
+			packageProductDependencies = (
+				EB1F5A25282DA85600D72A3C /* Alamofire */,
+			);
 			productName = ITISportApp;
 			productReference = EBC8191C282BFCB200762FA7 /* ITISportApp.app */;
 			productType = "com.apple.product-type.application";
@@ -345,6 +349,9 @@
 				Base,
 			);
 			mainGroup = EBC81913282BFCB200762FA7;
+			packageReferences = (
+				EB1F5A24282DA85600D72A3C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = EBC8191D282BFCB200762FA7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -831,6 +838,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EB1F5A24282DA85600D72A3C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB1F5A25282DA85600D72A3C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB1F5A24282DA85600D72A3C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		EBC81928282BFCB200762FA7 /* ITISportApp.xcdatamodeld */ = {
