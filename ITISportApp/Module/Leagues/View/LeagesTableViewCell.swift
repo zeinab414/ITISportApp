@@ -13,4 +13,9 @@ class LeagesTableViewCell: UITableViewCell {
     @IBOutlet weak var leagsImage: UIImageView!
     
     @IBOutlet weak var leagsName: UILabel!
+    @IBAction func btnDiplayVideo(_ sender: UIButton) {
+        var tableCell=LeagsViewController()
+        tableCell.diplayYoutubeVideo()
+        print("hello btn")
+    }
 }

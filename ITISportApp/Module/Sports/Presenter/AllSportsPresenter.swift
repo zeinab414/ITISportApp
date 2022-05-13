@@ -20,6 +20,7 @@ class AllSportsPresenter {
       func attachView(view: SportsProtocol){
           self.view = view
       }
+    /*
       func getSports(){
           NetworkService.fetchResult {[weak self] (result) in
               
@@ -33,12 +34,13 @@ class AllSportsPresenter {
               }
           }
       }
+ */
     
    func getSportsFromAF(){
           let service=NetworkService()
           service.fetchSportResultWithAF{[weak self] (result1) in
              // print(result1?.sports[2].strSport ?? "")
-              self?.resultFromAF = result1!
+              self?.resultFromAF = result1 ?? []
               DispatchQueue.main.async {
                   self?.view.stopAnimating()
                   self?.view.renderTableView()

@@ -9,10 +9,15 @@ import Alamofire
 import SwiftyJSON
 import Foundation
 
-
+struct LeaguesValues {
+    var leagueImage:String=""
+    var leagueName:String=""
+    var youtubeLink:String=""
+}
 protocol SportService{
   static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void)
     func fetchSportResultWithAF(complitionHandler: @escaping ([ResultView]?) -> Void) ->Array<ResultView>
+    func fetchSLeagesResultWithAF(endPoint:String,complitionHandler: @escaping ([LeaguesValues]?) -> Void) ->Array<LeaguesValues>
 }
 
  
@@ -20,6 +25,8 @@ protocol SportService{
 class NetworkService : SportService{
     
 var myData:[ResultView] = []
+var myLeaguesData:[LeaguesValues] = []
+    
 
 static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
     let url = URL(string: "https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
@@ -76,4 +83,32 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
         return myData
          
     }
+    func fetchSLeagesResultWithAF(endPoint:String,complitionHandler: @escaping ([LeaguesValues]?) -> Void) ->Array<LeaguesValues>{
+        var baseURL:String="https://www.thesportsdb.com/api/v1/json/2/search_all_leagues.php?s="+endPoint
+           Alamofire.request(baseURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
+                switch responseData.result{
+                case .success:
+            
+                    let myResult = try? JSON(data: responseData.data!)
+                    let resultArray = myResult!["countries"]
+                    for i in resultArray.arrayValue {
+                     
+                        var leaguesValue: LeaguesValues = LeaguesValues(leagueImage: i["strBadge"].stringValue, leagueName: i["strLeague"].stringValue, youtubeLink: i["strYoutube"].stringValue)
+                     //   print("testtttttt"+i["strBadge"].stringValue)
+                        
+                        self.myLeaguesData.append(leaguesValue)
+                        
+                    }
+                    complitionHandler(self.myLeaguesData)
+                  
+               
+                case .failure:
+                    print("Can not get data")
+                   complitionHandler(nil)
+                    break
+                }
+            }
+           return myLeaguesData
+            
+       }
 }
