@@ -58,11 +58,20 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
         presenter.attachView(view: self)
         
         presenter.getLeaguesFromAF(myEndPoint: sportName)
-    /*
-        if(resultView.count==0){
+      /*
+        if resultView.count==0{
             LeagsTableView.isHidden=true
+            let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
+                 img.image=UIImage(systemName: "icloud.splash")
+                 img.tintColor = .gray
+                 self.view.addSubview(img)
+                 let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.minY+15, width: img.frame.width, height: 30))
+                 labelNoData.text="No Data"
+                 labelNoData.textAlignment = .center
+                 self.view.addSubview(labelNoData)
         }
- */
+       */
+ 
      //   print("count: \(resultView.count)")
  
     }
