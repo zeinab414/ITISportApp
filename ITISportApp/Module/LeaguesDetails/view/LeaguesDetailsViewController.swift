@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Kingfisher
 
 class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource {
-    
+    var legID:String=""
     
     @IBOutlet weak var upComingEventsCollectionView: UICollectionView!
     
@@ -17,6 +18,12 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
     
     
     @IBOutlet weak var teamsCollectionView: UICollectionView!
+    
+    let indicator = UIActivityIndicatorView(style: .large)
+   var presenter :LeaguesDetailsPresenter!
+      // Modle for View
+      var latestResultView: [EventsValues]=[]
+     var upcomingResultView: [EventsValues]=[]
     
 //    let upcomingEventsAraay = [""]
 //    let latestEventsAraay = [""]
@@ -43,6 +50,15 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         teamsCollectionView.delegate = self
         teamsCollectionView.dataSource = self
         
+        indicator.center = self.view.center
+        self.view.addSubview(indicator)
+        //indicator.startAnimating()
+        
+        presenter = LeaguesDetailsPresenter(NWService: NetworkService())
+        presenter.attachView(view: self)
+        
+        presenter.getEventsFromAF(myEndPoint: legID)
+        
     }
     
     
@@ -53,7 +69,8 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         }
         else if(collectionView == latestEventsCollectionView){
             //return latestEventsAraay.count
-            return 10
+            return latestResultView.count
+           // return 5
         
         }
         else {
@@ -68,7 +85,8 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         if(collectionView == upComingEventsCollectionView){
             let upcomingEvents_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingEventCell", for: indexPath) as! UpcomingEventCell
             // assign dumy data to views inside cell
-            upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sportbackground5")
+            upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sportbackground5.jpg")
+            
             upcomingEvents_cell.firstTeamImage.image = UIImage(named: "sport.jpeg")
             upcomingEvents_cell.secondTeamImage.image = UIImage(named:"sport.jpeg")
             upcomingEvents_cell.firstTeamLabel.text = "First Team"
@@ -80,17 +98,11 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         }
         else if( collectionView == latestEventsCollectionView){
             let latestEvents_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestEventCell", for: indexPath) as! LatestEventsCell
-            // assign dumy data to views inside cell
-            latestEvents_cell.latestEvent_cellBackgroundImage.image = UIImage(named: "sportbackground6")
-            latestEvents_cell.latestEvent_timeLabel.text = "10:00 PM"
-            latestEvents_cell.latestEvent_dateLabel.text = "10 Feb"
-            latestEvents_cell.latestEvent_firstTeamImage.image = UIImage(named: "sport.jpg")
-            latestEvents_cell.latestEvent_secondTeamImage.image = UIImage(named: "sport.jpg")
-            latestEvents_cell.firstTeamScoreLabel.text = "1"
-            latestEvents_cell.latestEvent_VsLabel.text = ":"
-            latestEvents_cell.secondTeamScoreLabel.text = "3"
-            latestEvents_cell.latestEvent_firstTeamNameLabel.text = "First Team"
-            latestEvents_cell.latestEvent_secondteamNameLabel.text = " Second Team"
+            //latestEvents_cell
+            let url = URL(string: latestResultView[indexPath.row].eventImage)
+            latestEvents_cell.latestEvent_backgroundImage.kf.setImage(with: url,placeholder: UIImage(named: "sport.jpeg"))
+           // latestEvents_cell.latestEvent_backgroundImage.image=UIImage(named: "sport.jpeg")
+            latestEvents_cell.latestEvent_firstTeamNameLabel.text = latestResultView[indexPath.row].firstTeamName
             
             return latestEvents_cell
         }
@@ -108,3 +120,45 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
   
 
 }
+extension LeaguesDetailsViewController : SportsProtocol {
+    func stopAnimating() {
+        indicator.stopAnimating()
+        // I have the result
+        //presenter.result
+    }
+    func renderTableView(){
+        
+        latestResultView = presenter.latestResultFromAF.map({ (item) -> EventsValues in
+            var res:EventsValues=EventsValues(eventName: item.eventName , eventStatus: item.eventStatus , eventImage: item.eventImage, firstTeamName: item.firstTeamName, secondTeamName: item.secondTeamName, eventDate: item.eventDate, eventTime: item.eventTime, firstTeamScore: item.firstTeamScore, secondTeamScore: item.secondTeamScore)
+            return res
+        })
+        /*
+        upcomingResultView = presenter.upcommingResultFromAF.map({ (item) -> EventsValues in
+            var res:EventsValues=EventsValues(eventName: item.eventName , eventStatus: item.eventStatus , eventImage: item.eventImage, firstTeamName: item.firstTeamName, secondTeamName: item.secondTeamName, eventDate: item.eventDate, eventTime: item.eventTime, firstTeamScore: item.firstTeamScore, secondTeamScore: item.secondTeamScore)
+            return res
+        })
+ */
+        /*
+        if latestResultView.count==0{
+                   latestEventsCollectionView.isHidden=true
+                   let img=UIImageView(frame: CGRect(x:50,y:400,width:100,height:100))
+                        img.image=UIImage(systemName: "icloud.slash")
+                        img.tintColor = .gray
+                        self.view.addSubview(img)
+                        let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                        labelNoData.text="No Data"
+                        labelNoData.textAlignment = .center
+                        self.view.addSubview(labelNoData)
+               }
+ */
+        self.latestEventsCollectionView.reloadData()
+       // self.upComingEventsCollectionView.reloadData()
+        //self.teamsCollectionView.reloadData()
+      
+
+ 
+    }
+}
+   
+   
+       

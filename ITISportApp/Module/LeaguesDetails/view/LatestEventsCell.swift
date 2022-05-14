@@ -10,22 +10,12 @@ import UIKit
 
 class LatestEventsCell: UICollectionViewCell {
     
-    @IBOutlet weak var latestEvent_cellBackgroundImage: UIImageView!
-    
-    @IBOutlet weak var firstTeamScoreLabel: UILabel!
-    
     @IBOutlet weak var latestEvent_firstTeamNameLabel: UILabel!
     
-    @IBOutlet weak var latestEvent_secondteamNameLabel: UILabel!
-    @IBOutlet weak var secondTeamScoreLabel: UILabel!
-    
-    @IBOutlet weak var latestEvent_firstTeamImage: UIImageView!
-    
-    
-    @IBOutlet weak var latestEvent_secondTeamImage: UIImageView!
-    
     @IBOutlet weak var latestEvent_timeLabel: UILabel!
-    
     @IBOutlet weak var latestEvent_dateLabel: UILabel!
-    @IBOutlet weak var latestEvent_VsLabel: UILabel!
+    @IBOutlet weak var latestEvent_secondTeamNameLabel: UILabel!
+    @IBOutlet weak var latestEvent_secondTeamScoreLabel: UILabel!
+    @IBOutlet weak var latestEvent_firstTeamScoreLabel: UILabel!
+    @IBOutlet weak var latestEvent_backgroundImage: UIImageView!
 }

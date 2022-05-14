@@ -42,7 +42,7 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let myindexPath=IndexPath(row: sender.tag, section: 0)
         print("hello display")
                        let youtubeId = "SxTYjptEzZs"
-         youtubeLink=resultView[myindexPath.row].leagueImage
+        youtubeLink=resultView[myindexPath.row].youtubeLink
                            var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
                            if UIApplication.shared.canOpenURL(youtubeUrl as URL){
                                UIApplication.shared.openURL(youtubeUrl as URL)
@@ -53,13 +53,15 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
                                if(myUrl.isEmpty){
                                    myUrl="https://www.youtube.com/watch?v=AcVtT2d8-kk"
                                }
-                               youtubeUrl = NSURL(string:"https://"+myUrl)!
+                               youtubeUrl = NSURL(string:myUrl)!
                                UIApplication.shared.openURL(youtubeUrl as URL)
                            }
     }
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // youtubeLink=resultView[indexPath.row].leagueImage
-         print("hello did selected")
+    let vc = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsID") as? LeaguesDetailsViewController
+    vc?.legID = resultView[indexPath.row].leagueID
+       self.navigationController?.pushViewController(vc!, animated: true)
+
          
      }
 

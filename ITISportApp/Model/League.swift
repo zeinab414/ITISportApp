@@ -8,7 +8,7 @@
 
 import Foundation
 class League : Decodable{
-    var dateFirstEvent : String?
+    var dateFirstEvent : String? 
     var idAPIfootball : String?
     var idCup : String?
     var idLeague : String?

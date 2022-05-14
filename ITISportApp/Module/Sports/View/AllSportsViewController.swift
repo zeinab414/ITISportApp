@@ -46,8 +46,8 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-       // let service = NetworkService()
-       // service.fetchSLeagesResultWithAF()
+        let service = NetworkService()
+       // service.fetchEventsResultWithAF()
         
         indicator.center = self.view.center
         self.view.addSubview(indicator)
