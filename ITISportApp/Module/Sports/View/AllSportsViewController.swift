@@ -57,6 +57,9 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
         presenter.attachView(view: self)
         
         presenter.getSportsFromAF()
+        let layout=UICollectionViewFlowLayout()
+        layout.itemSize=CGSize(width:allSportsCollectionView.frame.width/3, height: 200)
+        allSportsCollectionView.collectionViewLayout=layout
     }
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

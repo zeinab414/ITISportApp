@@ -11,7 +11,7 @@ import Kingfisher
 
 class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDelegate  {
     var sportName:String=""
-    var youtubeLink:String="test"
+    var youtubeLink:String=""
     
      let indicator = UIActivityIndicatorView(style: .large)
     var presenter :LeaguesPresenter!
@@ -34,11 +34,31 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let url = URL(string: resultView[indexPath.row].leagueImage)
         cell.leagsImage.kf.setImage(with: url)
         
-        
+        cell.btnDiplayVideo.tag=indexPath.row
+        cell.btnDiplayVideo.addTarget(self, action: #selector(displayYoutubeVideo), for: .touchUpInside)
         return cell
     }
+    @objc func displayYoutubeVideo(sender:UIButton){
+        let myindexPath=IndexPath(row: sender.tag, section: 0)
+        print("hello display")
+                       let youtubeId = "SxTYjptEzZs"
+         youtubeLink=resultView[myindexPath.row].leagueImage
+                           var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
+                           if UIApplication.shared.canOpenURL(youtubeUrl as URL){
+                               UIApplication.shared.openURL(youtubeUrl as URL)
+                           } else{
+                                 
+                   
+                               var myUrl=youtubeLink
+                               if(myUrl.isEmpty){
+                                   myUrl="https://www.youtube.com/watch?v=AcVtT2d8-kk"
+                               }
+                               youtubeUrl = NSURL(string:"https://"+myUrl)!
+                               UIApplication.shared.openURL(youtubeUrl as URL)
+                           }
+    }
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         youtubeLink=resultView[indexPath.row].leagueImage
+        // youtubeLink=resultView[indexPath.row].leagueImage
          print("hello did selected")
          
      }
@@ -102,6 +122,17 @@ extension LeagsViewController : SportsProtocol {
             var res:LeaguesValues=LeaguesValues(leagueImage:item.leagueImage ?? "",leagueName:item.leagueName ?? "",youtubeLink:item.youtubeLink ?? "")
             return res
         })
+        if resultView.count==0{
+                   LeagsTableView.isHidden=true
+                   let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
+                        img.image=UIImage(systemName: "icloud.slash")
+                        img.tintColor = .gray
+                        self.view.addSubview(img)
+                        let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                        labelNoData.text="No Data"
+                        labelNoData.textAlignment = .center
+                        self.view.addSubview(labelNoData)
+               }
         self.LeagsTableView.reloadData()
       
 
@@ -109,26 +140,8 @@ extension LeagsViewController : SportsProtocol {
     }
 }
    
-    extension LeagsViewController:DisplayProtocole{
-         func diplayYoutubeVideo(){
-            print("hello display")
-                let youtubeId = "SxTYjptEzZs"
-                    var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
-                    if UIApplication.shared.canOpenURL(youtubeUrl as URL){
-                        UIApplication.shared.openURL(youtubeUrl as URL)
-                    } else{
-                          
-            
-                        var myUrl=youtubeLink
-                        if(myUrl.isEmpty){
-                            myUrl="https://www.youtube.com/watch?v=AcVtT2d8-kk"
-                        }
-                        youtubeUrl = NSURL(string:myUrl)!
-                        UIApplication.shared.openURL(youtubeUrl as URL)
-                    }
-            }
-
-        }
+   
+        
 
 
 
