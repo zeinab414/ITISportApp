@@ -35,6 +35,8 @@ protocol SportService{
     
     func fetchEventsResultWithAF(endPoint:String,complitionHandler: @escaping ([EventsValues]?) -> Void) ->Array<EventsValues>
     //func fetchEventsResultWithAF() ->Array<EventsValues>
+    
+    func fetchUpcomingEventsResultWithAF(endPoint:String,complitionHandler: @escaping ([EventsValues]?) -> Void) ->Array<EventsValues>
 }
 
  
@@ -152,16 +154,49 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                         
                     }
                     
-                  //  complitionHandler(self.latestEventsData,self.upcomingEventsData)
+                  complitionHandler(self.latestEventsData)
                   
                
                 case .failure:
                     print("Can not get data")
-                  // complitionHandler(nil,nil)
+                  complitionHandler(nil)
                     break
                 }
             }
            return latestEventsData
+            
+       }
+    func fetchUpcomingEventsResultWithAF(endPoint:String,complitionHandler: @escaping ([EventsValues]?) -> Void) ->Array<EventsValues>{
+        
+        var baseURL:String = "https://www.thesportsdb.com/api/v1/json/2/eventsseason.php?id="+endPoint
+        
+   
+           Alamofire.request(baseURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
+                switch responseData.result{
+                case .success:
+                    let myResult = try? JSON(data: responseData.data!)
+                    let resultArray = myResult!["events"]
+                    for i in resultArray.arrayValue {
+                        if(i ["strStatus"].stringValue != "Match Finished"){
+                        var eventValues: EventsValues = EventsValues(eventName: i ["strEvent"].stringValue, eventStatus: i ["strStatus"].stringValue, eventImage: i ["strThumb"].stringValue, firstTeamName: i ["strHomeTeam"].stringValue, secondTeamName: i ["strAwayTeam"].stringValue, eventDate: i ["dateEvent"].stringValue, eventTime: i ["strTime"].stringValue, firstTeamScore: i ["intHomeScore"].stringValue, secondTeamScore: i ["intAwayScore"].stringValue)
+                            self.upcomingEventsData.append(eventValues)
+                        }
+                      
+ 
+                        print("eventttt:  \( i ["dateEvent"].stringValue)")
+                        
+                    }
+                    
+                  complitionHandler(self.upcomingEventsData)
+                  
+               
+                case .failure:
+                    print("Can not get data")
+                  complitionHandler(nil)
+                    break
+                }
+            }
+           return upcomingEventsData
             
        }
 }

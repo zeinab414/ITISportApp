@@ -121,7 +121,7 @@ extension LeagsViewController : SportsProtocol {
     func renderTableView(){
         
         resultView = presenter.resultFromAF.map({ (item) -> LeaguesValues in
-            var res:LeaguesValues=LeaguesValues(leagueImage:item.leagueImage ?? "",leagueName:item.leagueName ?? "",youtubeLink:item.youtubeLink ?? "")
+            var res:LeaguesValues=LeaguesValues(leagueImage:item.leagueImage ?? "",leagueName:item.leagueName ?? "",youtubeLink:item.youtubeLink ?? "",leagueCountry: item.leagueCountry,leagueID: item.leagueID)
             return res
         })
         if resultView.count==0{

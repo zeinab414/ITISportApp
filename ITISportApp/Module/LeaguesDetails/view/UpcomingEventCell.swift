@@ -12,14 +12,8 @@ class UpcomingEventCell: UICollectionViewCell {
     
     @IBOutlet weak var cellbackgroundImage: UIImageView!
     
-    @IBOutlet weak var firstTeamImage: UIImageView!
-    
-    
-    @IBOutlet weak var secondTeamImage: UIImageView!
-    
-    @IBOutlet weak var secondTeamLabel: UILabel!
-    @IBOutlet weak var firstTeamLabel: UILabel!
-    
+   
+    @IBOutlet weak var eventName: UILabel!
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!

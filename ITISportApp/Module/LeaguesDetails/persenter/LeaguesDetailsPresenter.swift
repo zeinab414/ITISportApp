@@ -31,5 +31,17 @@ class LeaguesDetailsPresenter {
                  }
              }
          }
+    func getUpcomingEventsFromAF(myEndPoint:String){
+             let service=NetworkService()
+        service.fetchUpcomingEventsResultWithAF(endPoint: myEndPoint){[weak self] (result1) in
+               
+            self?.upcommingResultFromAF = result1 ?? []
+                
+                 DispatchQueue.main.async {
+                     self?.view.stopAnimating()
+                     self?.view.renderTableView()
+                 }
+             }
+         }
  
 }

@@ -58,6 +58,20 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         presenter.attachView(view: self)
         
         presenter.getEventsFromAF(myEndPoint: legID)
+      presenter.getUpcomingEventsFromAF(myEndPoint: legID)
+        let latestEventCell_layout=UICollectionViewFlowLayout()
+        latestEventCell_layout.scrollDirection = .vertical
+        latestEventCell_layout.itemSize=CGSize(width:latestEventsCollectionView.frame.width, height: 200)
+        latestEventsCollectionView.collectionViewLayout=latestEventCell_layout
+        
+        //upcominCell
+//        let upcomingEventCell_layout=UICollectionViewFlowLayout()
+//        upcomingEventCell_layout.scrollDirection = .horizontal
+//        upcomingEventCell_layout.itemSize=CGSize(width:upComingEventsCollectionView.frame.width, height: 200)
+//            upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
+        
+        
+       
         
     }
     
@@ -85,12 +99,8 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         if(collectionView == upComingEventsCollectionView){
             let upcomingEvents_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingEventCell", for: indexPath) as! UpcomingEventCell
             // assign dumy data to views inside cell
-            upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sportbackground5.jpg")
-            
-            upcomingEvents_cell.firstTeamImage.image = UIImage(named: "sport.jpeg")
-            upcomingEvents_cell.secondTeamImage.image = UIImage(named:"sport.jpeg")
-            upcomingEvents_cell.firstTeamLabel.text = "First Team"
-            upcomingEvents_cell.secondTeamLabel.text = "second Team"
+            upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sport.jpeg")
+            upcomingEvents_cell.eventName.text = "Event1"
             upcomingEvents_cell.dateLabel.text = "23 May"
             upcomingEvents_cell.timeLabel.text = "5:00 PM"
             
@@ -102,7 +112,18 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
             let url = URL(string: latestResultView[indexPath.row].eventImage)
             latestEvents_cell.latestEvent_backgroundImage.kf.setImage(with: url,placeholder: UIImage(named: "sport.jpeg"))
            // latestEvents_cell.latestEvent_backgroundImage.image=UIImage(named: "sport.jpeg")
+            //name
             latestEvents_cell.latestEvent_firstTeamNameLabel.text = latestResultView[indexPath.row].firstTeamName
+            latestEvents_cell.latestEvent_secondTeamNameLabel.text = latestResultView[indexPath.row].secondTeamName
+            //score
+            latestEvents_cell.latestEvent_firstTeamScoreLabel.text = latestResultView[indexPath.row].firstTeamScore
+            latestEvents_cell.latestEvent_secondTeamScoreLabel.text = latestResultView[indexPath.row].secondTeamScore
+            
+            //date
+            latestEvents_cell.latestEvent_dateLabel.text = latestResultView[indexPath.row].eventDate
+            
+            //time
+            latestEvents_cell.latestEvent_timeLabel.text = latestResultView[indexPath.row].eventTime
             
             return latestEvents_cell
         }
