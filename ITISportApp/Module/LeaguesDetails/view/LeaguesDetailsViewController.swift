@@ -10,6 +10,13 @@ import UIKit
 import Kingfisher
 
 class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    
+    @IBAction func btnAddToFav(_ sender: Any) {
+    }
+    
+    
+    
     var legID:String=""
     var myLeagueResult:LeaguesValues=LeaguesValues()
     
