@@ -1,14 +1,14 @@
 //
-//  FavoritViewController.swift
+//  FavViewController.swift
 //  ITISportApp
 //
-//  Created by user189294 on 5/11/22.
+//  Created by zeinab ibrahim on 5/15/22.
 //  Copyright © 2022 ititeam. All rights reserved.
 //
 
 import UIKit
 
-class FavoritViewController: UIViewController {
+class FavViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

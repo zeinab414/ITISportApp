@@ -10,6 +10,7 @@
 		86021E573BBFE29454A983ED /* Pods_ITISportApp_ITISportAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED0E46D8BC387DC45D69524 /* Pods_ITISportApp_ITISportAppUITests.framework */; };
 		87CCBC5E81A1307366721699 /* Pods_ITISportApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */; };
 		9BAF49D7C72EB3B90FF7FE38 /* Pods_ITISportAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4942DA0579E6DAA97353900E /* Pods_ITISportAppTests.framework */; };
+		EB1AE9E72830E2D30027BDD2 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */; };
 		EB1F5A26282DA85600D72A3C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB1F5A25282DA85600D72A3C /* Alamofire */; };
 		EBB6B6EC282D4E41009A40ED /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6EB282D4E41009A40ED /* Sport.swift */; };
 		EBB6B6EE282D4EAD009A40ED /* MySportResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */; };
@@ -72,6 +73,7 @@
 		9ED0E46D8BC387DC45D69524 /* Pods_ITISportApp_ITISportAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISportApp_ITISportAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF19A620EFA65B0A159F6563 /* Pods-ITISportApp-ITISportAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISportApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		EBB6B6EB282D4E41009A40ED /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySportResult.swift; sourceTree = "<group>"; };
 		EBB6B6F0282D4F62009A40ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -166,6 +168,31 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		EB1AE9DF2830E1D90027BDD2 /* Favourite */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AE9E12830E1F70027BDD2 /* View */,
+				EB1AE9E02830E1EC0027BDD2 /* Presenter */,
+			);
+			path = Favourite;
+			sourceTree = "<group>";
+		};
+		EB1AE9E02830E1EC0027BDD2 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		EB1AE9E12830E1F70027BDD2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF42469E282C281300639903 /* FavoritViewController.swift */,
+				EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		EBB6B6E9282D4D7F009A40ED /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +229,7 @@
 		EBB6B6F2282D5040009A40ED /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				EB1AE9DF2830E1D90027BDD2 /* Favourite */,
 				FFE611FF282F030500FDB121 /* LeaguesDetails */,
 				EBEE0DEC282E7C5A0002F0B5 /* Leagues */,
 				EBB6B6F3282D507D009A40ED /* Sports */,
@@ -268,7 +296,6 @@
 				EBC81921282BFCB200762FA7 /* SceneDelegate.swift */,
 				EBC81930282BFCB300762FA7 /* Info.plist */,
 				EBC81928282BFCB200762FA7 /* ITISportApp.xcdatamodeld */,
-				FF42469E282C281300639903 /* FavoritViewController.swift */,
 			);
 			path = ITISportApp;
 			sourceTree = "<group>";
@@ -623,6 +650,7 @@
 				EBB6B6F7282D5117009A40ED /* AllSportsPresenter.swift in Sources */,
 				EBC81920282BFCB200762FA7 /* AppDelegate.swift in Sources */,
 				FF19671F282F9D7F00E4E339 /* LatestEventsCell.swift in Sources */,
+				EB1AE9E72830E2D30027BDD2 /* FavouriteTableViewCell.swift in Sources */,
 				EBC81922282BFCB200762FA7 /* SceneDelegate.swift in Sources */,
 				EBC8192A282BFCB200762FA7 /* ITISportApp.xcdatamodeld in Sources */,
 				EBEE0DF6282ECA7D0002F0B5 /* DisplayProtocole.swift in Sources */,

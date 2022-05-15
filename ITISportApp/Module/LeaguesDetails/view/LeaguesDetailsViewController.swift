@@ -11,6 +11,7 @@ import Kingfisher
 
 class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource {
     var legID:String=""
+    var myLeagueResult:LeaguesValues=LeaguesValues()
     
     @IBOutlet weak var upComingEventsCollectionView: UICollectionView!
     
@@ -52,33 +53,32 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         
         indicator.center = self.view.center
         self.view.addSubview(indicator)
-        //indicator.startAnimating()
+        indicator.startAnimating()
         
         presenter = LeaguesDetailsPresenter(NWService: NetworkService())
         presenter.attachView(view: self)
         
-        presenter.getEventsFromAF(myEndPoint: legID)
-      presenter.getUpcomingEventsFromAF(myEndPoint: legID)
+        presenter.getEventsFromAF(myEndPoint: myLeagueResult.leagueID)
+    //  presenter.getUpcomingEventsFromAF(myEndPoint: legID)
         let latestEventCell_layout=UICollectionViewFlowLayout()
         latestEventCell_layout.scrollDirection = .vertical
-        latestEventCell_layout.itemSize=CGSize(width:latestEventsCollectionView.frame.width, height: 200)
+        latestEventCell_layout.itemSize=CGSize(width:latestEventsCollectionView.frame.width, height: 100)
         latestEventsCollectionView.collectionViewLayout=latestEventCell_layout
         
         //upcominCell
-//        let upcomingEventCell_layout=UICollectionViewFlowLayout()
-//        upcomingEventCell_layout.scrollDirection = .horizontal
-//        upcomingEventCell_layout.itemSize=CGSize(width:upComingEventsCollectionView.frame.width, height: 200)
-//            upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
-        
-        
-       
+       let upcomingEventCell_layout=UICollectionViewFlowLayout()
+        upcomingEventCell_layout.scrollDirection = .horizontal
+        upcomingEventCell_layout.itemSize=CGSize(width:upComingEventsCollectionView.frame.width, height: 200)
+upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
+           print("leg \( myLeagueResult.leagueID)")
+         print("leg \( myLeagueResult.leagueName)")
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(collectionView == upComingEventsCollectionView){
-            //return upcomingEventsAraay.count
+           
         return 5
         }
         else if(collectionView == latestEventsCollectionView){
@@ -88,7 +88,7 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         
         }
         else {
-            //return teamsAraay.count
+           
             return 5
         }
        
@@ -124,7 +124,7 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
             
             //time
             latestEvents_cell.latestEvent_timeLabel.text = latestResultView[indexPath.row].eventTime
-            
+         
             return latestEvents_cell
         }
         else {
@@ -173,7 +173,7 @@ extension LeaguesDetailsViewController : SportsProtocol {
                }
  */
         self.latestEventsCollectionView.reloadData()
-       // self.upComingEventsCollectionView.reloadData()
+     //  self.upComingEventsCollectionView.reloadData()
         //self.teamsCollectionView.reloadData()
       
 
