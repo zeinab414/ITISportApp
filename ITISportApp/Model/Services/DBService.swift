@@ -10,7 +10,8 @@ import Foundation
 import CoreData
 protocol DBProtocole {
     func addLeague(favLeague:LeaguesValues)
-        func getLeagues() -> Array<NSManagedObject>
+    func getLeagues() -> Array<NSManagedObject>
+    func deleteFromCoreData(deleteLeage: NSManagedObject)
 }
 class DBService:DBProtocole{
     
@@ -48,5 +49,12 @@ class DBService:DBProtocole{
            return favouriteLeagues
        }
        
-      
+      func deleteFromCoreData(deleteLeage: NSManagedObject){
+      viewContext.delete(deleteLeage)
+      do {
+          try viewContext.save()
+      } catch let error as NSError {
+          print("can not delete this row")
+      }
+      }
 }

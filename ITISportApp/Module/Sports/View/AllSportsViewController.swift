@@ -49,17 +49,32 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
         let service = NetworkService()
        // service.fetchEventsResultWithAF()
         
-        indicator.center = self.view.center
-        self.view.addSubview(indicator)
-        indicator.startAnimating()
-        
-        presenter = AllSportsPresenter(NWService: NetworkService())
-        presenter.attachView(view: self)
-        
-        presenter.getSportsFromAF()
+       
         let layout=UICollectionViewFlowLayout()
         layout.itemSize=CGSize(width:allSportsCollectionView.frame.width/3, height: 200)
         allSportsCollectionView.collectionViewLayout=layout
+        
+        if NetworkConnection.shared.isConnected{
+            indicator.center = self.view.center
+                   self.view.addSubview(indicator)
+                   indicator.startAnimating()
+                   
+                   presenter = AllSportsPresenter(NWService: NetworkService())
+                   presenter.attachView(view: self)
+                   
+                   presenter.getSportsFromAF()
+        }
+        else{
+            allSportsCollectionView.isHidden=true
+                         let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
+                              img.image=UIImage(systemName: "icloud.slash")
+                              img.tintColor = .gray
+                              self.view.addSubview(img)
+                              let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                              labelNoData.text="No Inernet"
+                              labelNoData.textAlignment = .center
+                              self.view.addSubview(labelNoData)
+        }
     }
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

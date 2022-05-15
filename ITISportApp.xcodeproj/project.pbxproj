@@ -14,6 +14,7 @@
 		EB1F5A26282DA85600D72A3C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB1F5A25282DA85600D72A3C /* Alamofire */; };
 		EB7ECBB928313DCF004098BB /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBB828313DCF004098BB /* DBService.swift */; };
 		EB7ECBBB28314273004098BB /* FavPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBBA28314273004098BB /* FavPresenter.swift */; };
+		EB7ECBBD2831815B004098BB /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBBC2831815B004098BB /* NetworkConnection.swift */; };
 		EBB6B6EC282D4E41009A40ED /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6EB282D4E41009A40ED /* Sport.swift */; };
 		EBB6B6EE282D4EAD009A40ED /* MySportResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */; };
 		EBB6B6F1282D4F62009A40ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6F0282D4F62009A40ED /* NetworkService.swift */; };
@@ -78,6 +79,7 @@
 		EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
 		EB7ECBB828313DCF004098BB /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		EB7ECBBA28314273004098BB /* FavPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPresenter.swift; sourceTree = "<group>"; };
+		EB7ECBBC2831815B004098BB /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
 		EBB6B6EB282D4E41009A40ED /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySportResult.swift; sourceTree = "<group>"; };
 		EBB6B6F0282D4F62009A40ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				EBC81921282BFCB200762FA7 /* SceneDelegate.swift */,
 				EBC81930282BFCB300762FA7 /* Info.plist */,
 				EBC81928282BFCB200762FA7 /* ITISportApp.xcdatamodeld */,
+				EB7ECBBC2831815B004098BB /* NetworkConnection.swift */,
 			);
 			path = ITISportApp;
 			sourceTree = "<group>";
@@ -655,6 +658,7 @@
 				FF196724282F9DA400E4E339 /* TeamsCollectionViewCell.swift in Sources */,
 				FF42469F282C281300639903 /* FavoritViewController.swift in Sources */,
 				EBB6B6F7282D5117009A40ED /* AllSportsPresenter.swift in Sources */,
+				EB7ECBBD2831815B004098BB /* NetworkConnection.swift in Sources */,
 				EBC81920282BFCB200762FA7 /* AppDelegate.swift in Sources */,
 				FF19671F282F9D7F00E4E339 /* LatestEventsCell.swift in Sources */,
 				EB1AE9E72830E2D30027BDD2 /* FavouriteTableViewCell.swift in Sources */,

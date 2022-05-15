@@ -90,45 +90,44 @@ class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewD
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           if(NetworkConnection.shared.isConnected){
   let vc = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsID") as? LeaguesDetailsViewController
           vc?.legID = resultArray[indexPath.row].value(forKey: "leagueID") as? String ?? ""
          self.navigationController?.pushViewController(vc!, animated: true)
          
+        }
+           else{
+            let disconnctedAlert = UIAlertController(title: "Check Internet", message: "Turn on the WIFI and try later", preferredStyle: .alert)
+            disconnctedAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            present(disconnctedAlert, animated: true, completion: nil)
+        }
      }
-
-}
-/*
-extension FavoritViewController : SportsProtocol {
-    func stopAnimating() {
-       // indicator.stopAnimating()
-        // I have the result
-        //presenter.result
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+           // favPresenter.deleteOneRow(appDelegate: appDelegate, leage: favLeagues[indexPath.row])
+            presenter.deleteOneRow(appDel:appDelegate,deleteLeage1: resultArray[indexPath.row])
+            resultArray.remove(at: indexPath.row)
+            FavTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+        }
     }
-    func renderTableView(){
-        
-        resultView = presenter.resultFromAF.map({ (item) -> LeaguesValues in
-            var res:LeaguesValues=LeaguesValues(leagueImage:item.leagueImage ?? "",leagueName:item.leagueName ?? "",youtubeLink:item.youtubeLink ?? "",leagueCountry: item.leagueCountry,leagueID: item.leagueID)
-            return res
-        })
-        if resultView.count==0{
-                   LeagsTableView.isHidden=true
-                   let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
-                        img.image=UIImage(systemName: "icloud.slash")
-                        img.tintColor = .gray
-                        self.view.addSubview(img)
-                        let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
-                        labelNoData.text="No Data"
-                        labelNoData.textAlignment = .center
-                        self.view.addSubview(labelNoData)
-               }
-        self.LeagsTableView.reloadData()
-      
-
- 
+    override func viewDidAppear(_ animated: Bool) {
+            resultArray = presenter.fetchAllLeagues(appDel:appDelegate)
+            
+            if(resultArray.count == 0){
+                FavTableView.isHidden=true
+                                let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
+                                     img.image=UIImage(systemName: "icloud.slash")
+                                     img.tintColor = .gray
+                                     self.view.addSubview(img)
+                                     let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                                     labelNoData.text="No Data"
+                                     labelNoData.textAlignment = .center
+                                     self.view.addSubview(labelNoData)
+            }
+           
+            FavTableView.reloadData()
     }
 }
-   
-   
-  */
+
 
 
