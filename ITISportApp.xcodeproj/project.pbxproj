@@ -12,6 +12,8 @@
 		9BAF49D7C72EB3B90FF7FE38 /* Pods_ITISportAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4942DA0579E6DAA97353900E /* Pods_ITISportAppTests.framework */; };
 		EB1AE9E72830E2D30027BDD2 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */; };
 		EB1F5A26282DA85600D72A3C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB1F5A25282DA85600D72A3C /* Alamofire */; };
+		EB7ECBB928313DCF004098BB /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBB828313DCF004098BB /* DBService.swift */; };
+		EB7ECBBB28314273004098BB /* FavPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBBA28314273004098BB /* FavPresenter.swift */; };
 		EBB6B6EC282D4E41009A40ED /* Sport.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6EB282D4E41009A40ED /* Sport.swift */; };
 		EBB6B6EE282D4EAD009A40ED /* MySportResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */; };
 		EBB6B6F1282D4F62009A40ED /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBB6B6F0282D4F62009A40ED /* NetworkService.swift */; };
@@ -74,6 +76,8 @@
 		DF19A620EFA65B0A159F6563 /* Pods-ITISportApp-ITISportAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISportApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
+		EB7ECBB828313DCF004098BB /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		EB7ECBBA28314273004098BB /* FavPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPresenter.swift; sourceTree = "<group>"; };
 		EBB6B6EB282D4E41009A40ED /* Sport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sport.swift; sourceTree = "<group>"; };
 		EBB6B6ED282D4EAD009A40ED /* MySportResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySportResult.swift; sourceTree = "<group>"; };
 		EBB6B6F0282D4F62009A40ED /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -180,6 +184,7 @@
 		EB1AE9E02830E1EC0027BDD2 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				EB7ECBBA28314273004098BB /* FavPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				EBB6B6F0282D4F62009A40ED /* NetworkService.swift */,
+				EB7ECBB828313DCF004098BB /* DBService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -638,6 +644,7 @@
 				EBEE0DF2282E815D0002F0B5 /* LeagueResult.swift in Sources */,
 				EBC81924282BFCB200762FA7 /* AllSportsViewController.swift in Sources */,
 				FF196758282FF4C300E4E339 /* EventResult.swift in Sources */,
+				EB7ECBBB28314273004098BB /* FavPresenter.swift in Sources */,
 				FF4246A1282C298E00639903 /* LeagsViewController.swift in Sources */,
 				FF424697282C123900639903 /* SportCellCollectionViewCell.swift in Sources */,
 				FF19675D283018AA00E4E339 /* LeaguesDetailsPresenter.swift in Sources */,
@@ -658,6 +665,7 @@
 				FF19671A282F9D5300E4E339 /* UpcomingEventCell.swift in Sources */,
 				FFE61203282F043100FDB121 /* LeaguesDetailsViewController.swift in Sources */,
 				FF19674E282FD46800E4E339 /* TeamResult.swift in Sources */,
+				EB7ECBB928313DCF004098BB /* DBService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

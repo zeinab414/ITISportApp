@@ -11,8 +11,12 @@ import Kingfisher
 
 class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource {
     
-    
+    var favPresenter:FavPresenter!
+    var appDelegate:AppDelegate=UIApplication.shared.delegate as! AppDelegate
     @IBAction func btnAddToFav(_ sender: Any) {
+       print("ttest")
+        favPresenter.inserNewLeague(myFavLeague: myLeagueResult,appDel: appDelegate)
+        
     }
     
     
@@ -48,6 +52,7 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        favPresenter=FavPresenter()
         // Upcoming Events dataSource&delegete
         upComingEventsCollectionView.delegate = self
         upComingEventsCollectionView.dataSource = self
@@ -65,7 +70,9 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         presenter = LeaguesDetailsPresenter(NWService: NetworkService())
         presenter.attachView(view: self)
         
-        presenter.getEventsFromAF(myEndPoint: myLeagueResult.leagueID)
+      //  presenter.getEventsFromAF(myEndPoint: myLeagueResult.leagueID)
+         presenter.getEventsFromAF(myEndPoint: legID)
+        
     //  presenter.getUpcomingEventsFromAF(myEndPoint: legID)
         let latestEventCell_layout=UICollectionViewFlowLayout()
         latestEventCell_layout.scrollDirection = .vertical

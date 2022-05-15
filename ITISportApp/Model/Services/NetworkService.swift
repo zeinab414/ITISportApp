@@ -28,7 +28,7 @@ struct EventsValues {
     var secondTeamScore:String=""
 }
 protocol SportService{
-  static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void)
+//  static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void)
     func fetchSportResultWithAF(complitionHandler: @escaping ([ResultView]?) -> Void) ->Array<ResultView>
     func fetchSLeagesResultWithAF(endPoint:String,complitionHandler: @escaping ([LeaguesValues]?) -> Void) ->Array<LeaguesValues>
     
@@ -47,7 +47,7 @@ var myData:[ResultView] = []
 var myLeaguesData:[LeaguesValues] = []
 var latestEventsData:[EventsValues] = []
 var upcomingEventsData:[EventsValues] = []
-
+/*
 static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
     let url = URL(string: "https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
     guard let newUrl = url else{
@@ -78,6 +78,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
     task.resume()
     
     }
+ */
     
     func fetchSportResultWithAF(complitionHandler: @escaping ([ResultView]?) -> Void ) ->Array<ResultView>{
         Alamofire.request("https://www.thesportsdb.com/api/v1/json/2/all_sports.php", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in

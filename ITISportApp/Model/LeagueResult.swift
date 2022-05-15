@@ -7,7 +7,10 @@
 //
 
 import Foundation
-class LeagueResult : Decodable{
+class LeagueResult {}
+/*
+//class LeagueResult : Decodable{
     var leagues : [League]
     
 }
+*/
