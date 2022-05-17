@@ -74,16 +74,26 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
          presenter.getEventsFromAF(myEndPoint: legID)
         
     //  presenter.getUpcomingEventsFromAF(myEndPoint: legID)
-        let latestEventCell_layout=UICollectionViewFlowLayout()
-        latestEventCell_layout.scrollDirection = .vertical
-        latestEventCell_layout.itemSize=CGSize(width:latestEventsCollectionView.frame.width, height: 100)
-        latestEventsCollectionView.collectionViewLayout=latestEventCell_layout
         
         //upcominCell
        let upcomingEventCell_layout=UICollectionViewFlowLayout()
         upcomingEventCell_layout.scrollDirection = .horizontal
-        upcomingEventCell_layout.itemSize=CGSize(width:upComingEventsCollectionView.frame.width, height: 200)
-upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
+        upcomingEventCell_layout.itemSize=CGSize(width:upComingEventsCollectionView.frame.width*0.75, height: upComingEventsCollectionView.frame.height)
+        upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
+        
+        // latestCell layout
+        let latestEventCell_layout=UICollectionViewFlowLayout()
+        latestEventCell_layout.scrollDirection = .vertical
+        latestEventCell_layout.itemSize=CGSize(width:310, height:210)
+        latestEventsCollectionView.collectionViewLayout=latestEventCell_layout
+        
+    
+        //team cell
+        let teamCell_layout = UICollectionViewFlowLayout()
+        teamCell_layout.scrollDirection = .horizontal
+        teamCell_layout.itemSize = CGSize(width: teamsCollectionView.frame.width/3, height: teamsCollectionView.frame.height)
+        teamsCollectionView.collectionViewLayout = teamCell_layout
+        
            print("leg \( myLeagueResult.leagueID)")
          print("leg \( myLeagueResult.leagueName)")
         
@@ -103,8 +113,7 @@ upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
         }
         else {
            
-            return 5
-        }
+            return 20        }
        
     }
 
@@ -112,8 +121,12 @@ upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(collectionView == upComingEventsCollectionView){
             let upcomingEvents_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingEventCell", for: indexPath) as! UpcomingEventCell
+            
+            upcomingEvents_cell.backgroundColor = .yellow
+            upcomingEvents_cell.layer.cornerRadius = 20.0
+            
             // assign dumy data to views inside cell
-            upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sport.jpeg")
+            upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sportbackground5.jpg")
             upcomingEvents_cell.eventName.text = "Event1"
             upcomingEvents_cell.dateLabel.text = "23 May"
             upcomingEvents_cell.timeLabel.text = "5:00 PM"
@@ -122,10 +135,12 @@ upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
         }
         else if( collectionView == latestEventsCollectionView){
             let latestEvents_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestEventCell", for: indexPath) as! LatestEventsCell
-            //latestEvents_cell
+            
+            latestEvents_cell.backgroundColor = .black
+            latestEvents_cell.layer.cornerRadius = 20.0
+            
             let url = URL(string: latestResultView[indexPath.row].eventImage)
-            latestEvents_cell.latestEvent_backgroundImage.kf.setImage(with: url,placeholder: UIImage(named: "sport.jpeg"))
-           // latestEvents_cell.latestEvent_backgroundImage.image=UIImage(named: "sport.jpeg")
+            latestEvents_cell.latestEvent_backgroundImage.kf.setImage(with: url,placeholder: UIImage(named: "sportbackground5.jpg"))
             //name
             latestEvents_cell.latestEvent_firstTeamNameLabel.text = latestResultView[indexPath.row].firstTeamName
             latestEvents_cell.latestEvent_secondTeamNameLabel.text = latestResultView[indexPath.row].secondTeamName
@@ -143,8 +158,12 @@ upComingEventsCollectionView.collectionViewLayout=upcomingEventCell_layout
         }
         else {
             let teams_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamscell", for: indexPath) as! TeamsCollectionViewCell
-            teams_cell.teamImage.image = UIImage(named: "sport.jpg")
-            teams_cell.teamNameLabel.text = "Team1"
+            
+            //teams_cell.backgroundColor = .green
+            teams_cell.layer.cornerRadius = 12.0
+            
+            teams_cell.teamImage.image = UIImage(named: "arsnalbadge")
+            teams_cell.teamNameLabel.text = "Arsnal"
             return teams_cell
         }
         
