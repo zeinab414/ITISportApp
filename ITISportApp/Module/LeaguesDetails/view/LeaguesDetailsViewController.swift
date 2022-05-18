@@ -19,8 +19,7 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
     // Modle for View
     var latestResultView: [EventsValues]=[]
     var upcomingResultView: [EventsValues]=[]
-    //var teamResultView: [TeamsValues]=[]
-    
+    var teamResultView: [TeamsValues]=[]
     // collectionViews Outlets.....
     @IBOutlet weak var upComingEventsCollectionView: UICollectionView!
     @IBOutlet weak var latestEventsCollectionView: UICollectionView!
@@ -65,7 +64,8 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         presenter = LeaguesDetailsPresenter(NWService: NetworkService())
         presenter.attachView(view: self)
         presenter.getEventsFromAF(myEndPoint: legID)
-        //presenter.getTeamsFromAF(myEndPoint: legID)
+        presenter.getUpcomingEventsFromAF(myEndPoint: legID)
+        presenter.getTeamsFromAF(myEndPoint: myLeagueResult.leagueName)
         
         //upcominCell Layoout
        let upcomingEventCell_layout=UICollectionViewFlowLayout()
@@ -94,19 +94,22 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView == upComingEventsCollectionView)
-        {
-        return 5
-        }
-        else if(collectionView == latestEventsCollectionView)
-        {
-            return latestResultView.count
-        }
-        else
-        {
-            return 20
-           // return teamResultView.count
-        }
+        if(collectionView == upComingEventsCollectionView){
+                    return upcomingResultView.count
+               // return 5
+                }
+                 if(collectionView == latestEventsCollectionView){
+                    //return latestEventsAraay.count
+                    return latestResultView.count
+                   // return 5
+                
+                }
+                if(collectionView == teamsCollectionView) {
+                   
+                    return teamResultView.count
+                    
+                }
+                return 0
        
     }
 
@@ -120,13 +123,13 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
             
             // assign dumy data to views inside cell
             upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sportbackground5.jpg")
-            upcomingEvents_cell.eventName.text = "Event1"
+            upcomingEvents_cell.eventName.text = upcomingResultView[indexPath.row].eventName
             upcomingEvents_cell.dateLabel.text = "2022-11-11"
             upcomingEvents_cell.timeLabel.text = "17:00 PM"
             
             return upcomingEvents_cell
         }
-        else if( collectionView == latestEventsCollectionView){
+         if( collectionView == latestEventsCollectionView){
             let latestEvents_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "latestEventCell", for: indexPath) as! LatestEventsCell
             
             latestEvents_cell.backgroundColor = .black
@@ -149,17 +152,21 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
          
             return latestEvents_cell
         }
-        else {
-            let teams_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamscell", for: indexPath) as! TeamsCollectionViewCell
+        let teams_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamscell", for: indexPath) as! TeamsCollectionViewCell
+        if collectionView==teamsCollectionView {
+            
             
             //teams_cell.backgroundColor = .green
             teams_cell.layer.cornerRadius = 12.0
             
-            /*let url = URL(string: teamResultView[indexPath.row].teamBadge)
+            let url = URL(string: teamResultView[indexPath.row].teamBadge)
             teams_cell.teamImage.kf.setImage(with: url,placeholder: UIImage(named: "arsnalbadge"))
-            teams_cell.teamNameLabel.text = teamResultView[indexPath.row].teamName*/
-                teams_cell.teamImage.image = UIImage(named: "arsnalbadge")
-            teams_cell.teamNameLabel.text = "Arsnal"
+            teams_cell.teamNameLabel.text = teamResultView[indexPath.row].teamName
+                //teams_cell.teamImage.image = UIImage(named: "arsnalbadge")
+            //teams_cell.teamNameLabel.text = "Arsnal"
+            return teams_cell
+        }
+        else{
             return teams_cell
         }
         
@@ -179,17 +186,22 @@ extension LeaguesDetailsViewController : SportsProtocol {
     func renderTableView(){
         
         latestResultView = presenter.latestResultFromAF.map({ (item) -> EventsValues in
-            var res:EventsValues=EventsValues(eventName: item.eventName , eventStatus: item.eventStatus , eventImage: item.eventImage, firstTeamName: item.firstTeamName, secondTeamName: item.secondTeamName, eventDate: item.eventDate, eventTime: item.eventTime, firstTeamScore: item.firstTeamScore, secondTeamScore: item.secondTeamScore)
+            var res:EventsValues=EventsValues(eventName: item.eventName ?? "" , eventStatus: item.eventStatus ?? "" , eventImage: item.eventImage ?? "", firstTeamName: item.firstTeamName ?? "", secondTeamName: item.secondTeamName ?? "", eventDate: item.eventDate ?? "", eventTime: item.eventTime ?? "", firstTeamScore: item.firstTeamScore ?? "", secondTeamScore: item.secondTeamScore ?? "")
             return res
         })
-        /*teamResultView = presenter.TeamResultFromAF.map({(item) -> TeamsValues in
-            var teamResult:TeamsValues = TeamsValues(teamBadge: item.teamBadge, teamName: item.teamName, stadiumImage: item.stadiumImage, stadiumName: item.stadiumName, stadiumDescription: item.stadiumDescription, stadiumCapacity: item.stadiumCapacity, stadiumLocation: item.stadiumLocation, manager: item.manager, formedYear: item.formedYear, facebookLink: item.facebookLink, instgramLink: item.instgramLink, twitterLink: item.twitterLink, youtubeLink: item.youtubeLink)
+        upcomingResultView = presenter.upcommingResultFromAF.map({ (item) -> EventsValues in
+            var res:EventsValues=EventsValues(eventName: item.eventName ?? "" , eventStatus: item.eventStatus ?? "" , eventImage: item.eventImage ?? "", firstTeamName: item.firstTeamName ?? "", secondTeamName: item.secondTeamName ?? "", eventDate: item.eventDate ?? "", eventTime: item.eventTime ?? "", firstTeamScore: item.firstTeamScore ?? "", secondTeamScore: item.secondTeamScore ?? "")
+            return res
+        })
+        
+        teamResultView = presenter.TeamResultFromAF.map({(item) -> TeamsValues in
+            var teamResult:TeamsValues = TeamsValues(teamBadge: item.teamBadge ?? "", teamName: item.teamName ?? "", stadiumImage: item.stadiumImage ?? "", stadiumName: item.stadiumName ?? "", stadiumDescription: item.stadiumDescription ?? "", stadiumCapacity: item.stadiumCapacity ?? "", stadiumLocation: item.stadiumLocation ?? "", manager: item.manager ?? "", formedYear: item.formedYear ?? "", facebookLink: item.facebookLink ?? "", instgramLink: item.instgramLink, twitterLink: item.twitterLink ?? "", youtubeLink: item.youtubeLink ?? "")
             return teamResult
-        })*/
+        })
         
         self.latestEventsCollectionView.reloadData()
-     //  self.upComingEventsCollectionView.reloadData()
-       // self.teamsCollectionView.reloadData()
+      self.upComingEventsCollectionView.reloadData()
+        self.teamsCollectionView.reloadData()
       
 
  

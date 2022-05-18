@@ -201,7 +201,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                     let myResult = try? JSON(data: responseData.data!)
                     let resultArray = myResult!["events"]
                     for i in resultArray.arrayValue {
-                        if(i ["strStatus"].stringValue != "Match Finished"){
+                        if(i ["strStatus"].stringValue == "Match Finished"){
                         var eventValues: EventsValues = EventsValues(eventName: i ["strEvent"].stringValue, eventStatus: i ["strStatus"].stringValue, eventImage: i ["strThumb"].stringValue, firstTeamName: i ["strHomeTeam"].stringValue, secondTeamName: i ["strAwayTeam"].stringValue, eventDate: i ["dateEvent"].stringValue, eventTime: i ["strTime"].stringValue, firstTeamScore: i ["intHomeScore"].stringValue, secondTeamScore: i ["intAwayScore"].stringValue)
                             self.upcomingEventsData.append(eventValues)
                         }
@@ -224,7 +224,11 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
             
        }
     func fetchTeamsResultWithAF(endPoint:String,complitionHandler: @escaping ([TeamsValues]?) -> Void) ->Array<TeamsValues>{
-        Alamofire.request("https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
+        var newEndPoint:String=""
+        newEndPoint=endPoint.replacingOccurrences(of: " ", with: "%20", options: .literal, range: nil)
+          var baseURL:String = "https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php?l="+newEndPoint
+        
+        Alamofire.request(baseURL, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
              switch responseData.result{
              case .success:
             

@@ -8,9 +8,9 @@
 
 import Foundation
 class LeaguesDetailsPresenter {
-    var latestResultFromAF:[EventsValues]!
-    var upcommingResultFromAF:[EventsValues]!
-    var  TeamResultFromAF:[TeamsValues]!
+    var latestResultFromAF:[EventsValues]=[]
+    var upcommingResultFromAF:[EventsValues]=[]
+    var  TeamResultFromAF:[TeamsValues]=[]
     
     weak var view : SportsProtocol!
     init(NWService : SportService){
