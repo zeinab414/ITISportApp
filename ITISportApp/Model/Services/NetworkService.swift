@@ -26,6 +26,7 @@ struct EventsValues {
     var eventTime:String=""
     var firstTeamScore:String=""
     var secondTeamScore:String=""
+    
 }
 struct TeamsValues {
     //TeamCollectionView
@@ -252,4 +253,24 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
         return teamsData
          
     }
+    func compareDate(eventDate:String)->Int{
+             var comparedValue=0
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            let currentDate = dateFormatter.string(from: date)
+            if eventDate.compare(currentDate) == .orderedSame {
+                      comparedValue = 1
+                   }
+                   else if eventDate.compare(currentDate) == .orderedAscending{
+                       comparedValue = 2
+                   }
+                   else if eventDate.compare(currentDate) == .orderedDescending{
+                       comparedValue = 3
+                   }
+            else{
+                comparedValue = 0
+            }
+            return comparedValue
+        }
 }

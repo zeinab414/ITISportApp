@@ -13,6 +13,7 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
     
     //struct obj
     var legID:String=""
+    var legName:String=""
     var myLeagueResult:LeaguesValues=LeaguesValues()
     var myTeamsResult:TeamsValues = TeamsValues()
     
@@ -65,7 +66,7 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         presenter.attachView(view: self)
         presenter.getEventsFromAF(myEndPoint: legID)
         presenter.getUpcomingEventsFromAF(myEndPoint: legID)
-        presenter.getTeamsFromAF(myEndPoint: myLeagueResult.leagueName)
+        presenter.getTeamsFromAF(myEndPoint: legName)
         
         //upcominCell Layoout
        let upcomingEventCell_layout=UICollectionViewFlowLayout()
@@ -91,7 +92,15 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         print("leg \( myLeagueResult.leagueName)")
         
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == teamsCollectionView{
+        var selectedIndex=indexPath.row
     
+        let vc = storyboard?.instantiateViewController(withIdentifier: "teamDetailsID") as? TeamDetailsViewController
+            vc?.resultView = teamResultView[indexPath.row]
+           self.navigationController?.pushViewController(vc!, animated: true)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(collectionView == upComingEventsCollectionView){

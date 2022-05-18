@@ -49,11 +49,23 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
         let service = NetworkService()
        // service.fetchEventsResultWithAF()
         
-       
+       /*
         let layout=UICollectionViewFlowLayout()
         layout.itemSize=CGSize(width:allSportsCollectionView.frame.width/3, height: 200)
         allSportsCollectionView.collectionViewLayout=layout
-        
+        */
+        allSportsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
+
+               //
+               if let layout = allSportsCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout{
+                        layout.minimumLineSpacing = 0
+                    layout.minimumInteritemSpacing = 0
+                        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+                      //  let size = CGSize(width:(mycollectionsport!.bounds.width-165)/2, height: 220)
+                    let size = CGSize(width : allSportsCollectionView.frame.width * 0.44999 , height: allSportsCollectionView.frame.height * 0.249)
+                  // CGSize(width: mycollectionsport.frame.size.width/3.5, height: mycollectionsport.frame.size.height/4)
+                        layout.itemSize = size
+               }
         if NetworkConnection.shared.isConnected{
             indicator.center = self.view.center
                    self.view.addSubview(indicator)

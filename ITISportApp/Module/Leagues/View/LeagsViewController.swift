@@ -60,7 +60,8 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let vc = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsID") as? LeaguesDetailsViewController
     vc?.legID = resultView[indexPath.row].leagueID
-    vc?.myLeagueResult = LeaguesValues(leagueImage: resultView[indexPath.row].leagueImage, leagueName: resultView[indexPath.row].leagueName, youtubeLink: resultView[indexPath.row].youtubeLink,leagueCountry:resultView[indexPath.row].leagueCountry,leagueID: resultView[indexPath.row].leagueID)
+    vc?.legName = resultView[indexPath.row].leagueName
+    vc?.myLeagueResult = resultView[indexPath.row]
        self.navigationController?.pushViewController(vc!, animated: true)
 
          

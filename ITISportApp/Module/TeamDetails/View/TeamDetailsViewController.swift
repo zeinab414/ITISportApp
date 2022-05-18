@@ -8,18 +8,12 @@
 
 import UIKit
 
-class TeamDetailsViewController: UIViewController, SportsProtocol {
-    func stopAnimating() {
-        
-    }
-    
-    func renderTableView() {
-        
-    }
+class TeamDetailsViewController: UIViewController {
+   
     
     var presenter :TeamDetailsPresenter!
        // Modle for View
-       var resultView: [TeamsValues]=[]
+       var resultView:TeamsValues=TeamsValues()
     
     @IBOutlet weak var teamBadgeImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
@@ -40,10 +34,7 @@ class TeamDetailsViewController: UIViewController, SportsProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter = TeamDetailsPresenter(NWService: NetworkService())
-        presenter.attachView(view: self)
-        
-        //presenter.getTeamsDetailsFromAF(myEndPoint: <#T##String#>)(myEndPoint: sportName)
+        teamNameLabel.text=resultView.teamName
        
     }
     

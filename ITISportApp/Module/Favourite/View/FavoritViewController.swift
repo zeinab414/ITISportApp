@@ -28,17 +28,37 @@ class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewD
       
         resultArray = presenter.fetchAllLeagues(appDel:appDelegate)
         
-        if(resultArray.count == 0){
-            FavTableView.isHidden=true
-                            let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
-                                 img.image=UIImage(systemName: "icloud.slash")
-                                 img.tintColor = .gray
-                                 self.view.addSubview(img)
-                                 let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
-                                 labelNoData.text="No Data"
-                                 labelNoData.textAlignment = .center
-                                 self.view.addSubview(labelNoData)
-        }
+        let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
+                  img.image=UIImage(systemName: "icloud.slash")
+                  img.tintColor = .gray
+                 img.tag=20
+                let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                labelNoData.text="No Data"
+                labelNoData.textAlignment = .center
+                labelNoData.tag=21
+                if(resultArray.count == 0){
+                    FavTableView.isHidden=true
+                    self.view.addSubview(img)
+                                         
+                  self.view.addSubview(labelNoData)
+                    
+                }
+                    
+                else{
+                    FavTableView.isHidden=false
+                    if let viewWithTag = self.view.viewWithTag(20) {
+                            viewWithTag.removeFromSuperview()
+                        }else{
+                            print("Error")
+                        }
+                    if let viewWithTag = self.view.viewWithTag(21) {
+                            viewWithTag.removeFromSuperview()
+                        }else{
+                            print("Error")
+                        }
+                    
+                         
+                }
        
         FavTableView.reloadData()
         
@@ -93,6 +113,7 @@ class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewD
            if(NetworkConnection.shared.isConnected){
   let vc = storyboard?.instantiateViewController(withIdentifier: "LeaguesDetailsID") as? LeaguesDetailsViewController
           vc?.legID = resultArray[indexPath.row].value(forKey: "leagueID") as? String ?? ""
+            vc?.legName = resultArray[indexPath.row].value(forKey: "leagueName") as? String ?? ""
          self.navigationController?.pushViewController(vc!, animated: true)
          
         }
@@ -108,22 +129,77 @@ class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewD
             presenter.deleteOneRow(appDel:appDelegate,deleteLeage1: resultArray[indexPath.row])
             resultArray.remove(at: indexPath.row)
             FavTableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+            
+            let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
+                      img.image=UIImage(systemName: "icloud.slash")
+                      img.tintColor = .gray
+                     img.tag=20
+                    let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                    labelNoData.text="No Data"
+                    labelNoData.textAlignment = .center
+                    labelNoData.tag=21
+                    if(resultArray.count == 0){
+                        FavTableView.isHidden=true
+                        self.view.addSubview(img)
+                                             
+                      self.view.addSubview(labelNoData)
+                        
+                    }
+                        
+                    else{
+                        FavTableView.isHidden=false
+                        if let viewWithTag = self.view.viewWithTag(20) {
+                                viewWithTag.removeFromSuperview()
+                            }else{
+                                print("Error")
+                            }
+                        if let viewWithTag = self.view.viewWithTag(21) {
+                                viewWithTag.removeFromSuperview()
+                            }else{
+                                print("Error")
+                            }
+                        
+                             
+                    }
+               
+            
+            
         }
     }
     override func viewDidAppear(_ animated: Bool) {
             resultArray = presenter.fetchAllLeagues(appDel:appDelegate)
             
-            if(resultArray.count == 0){
-                FavTableView.isHidden=true
-                                let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
-                                     img.image=UIImage(systemName: "icloud.slash")
-                                     img.tintColor = .gray
-                                     self.view.addSubview(img)
-                                     let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
-                                     labelNoData.text="No Data"
-                                     labelNoData.textAlignment = .center
-                                     self.view.addSubview(labelNoData)
-            }
+        let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
+                  img.image=UIImage(systemName: "icloud.slash")
+                  img.tintColor = .gray
+                 img.tag=20
+                let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                labelNoData.text="No Data"
+                labelNoData.textAlignment = .center
+                labelNoData.tag=21
+                if(resultArray.count == 0){
+                    FavTableView.isHidden=true
+                    self.view.addSubview(img)
+                                         
+                  self.view.addSubview(labelNoData)
+                    
+                }
+                    
+                else{
+                    FavTableView.isHidden=false
+                    if let viewWithTag = self.view.viewWithTag(20) {
+                            viewWithTag.removeFromSuperview()
+                        }else{
+                            print("Error")
+                        }
+                    if let viewWithTag = self.view.viewWithTag(21) {
+                            viewWithTag.removeFromSuperview()
+                        }else{
+                            print("Error")
+                        }
+                    
+                         
+                }
            
             FavTableView.reloadData()
     }
