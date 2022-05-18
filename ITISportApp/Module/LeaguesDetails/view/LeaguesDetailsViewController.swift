@@ -11,44 +11,37 @@ import Kingfisher
 
 class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource {
     
+    //struct obj
+    var legID:String=""
+    var myLeagueResult:LeaguesValues=LeaguesValues()
+    var myTeamsResult:TeamsValues = TeamsValues()
+    
+    // Modle for View
+    var latestResultView: [EventsValues]=[]
+    var upcomingResultView: [EventsValues]=[]
+    //var teamResultView: [TeamsValues]=[]
+    
+    // collectionViews Outlets.....
+    @IBOutlet weak var upComingEventsCollectionView: UICollectionView!
+    @IBOutlet weak var latestEventsCollectionView: UICollectionView!
+    @IBOutlet weak var teamsCollectionView: UICollectionView!
+    
+    //presenter
+    var presenter :LeaguesDetailsPresenter!
     var favPresenter:FavPresenter!
+    
+    //coreData
     var appDelegate:AppDelegate=UIApplication.shared.delegate as! AppDelegate
+    
+    //indicator..
+    let indicator = UIActivityIndicatorView(style: .large)
+    
+    //FavButton
     @IBAction func btnAddToFav(_ sender: Any) {
        print("ttest")
         favPresenter.inserNewLeague(myFavLeague: myLeagueResult,appDel: appDelegate)
         
     }
-    
-    
-    
-    var legID:String=""
-    var myLeagueResult:LeaguesValues=LeaguesValues()
-    
-    @IBOutlet weak var upComingEventsCollectionView: UICollectionView!
-    
-    @IBOutlet weak var latestEventsCollectionView: UICollectionView!
-    
-    
-    @IBOutlet weak var teamsCollectionView: UICollectionView!
-    
-    let indicator = UIActivityIndicatorView(style: .large)
-   var presenter :LeaguesDetailsPresenter!
-      // Modle for View
-      var latestResultView: [EventsValues]=[]
-     var upcomingResultView: [EventsValues]=[]
-    
-//    let upcomingEventsAraay = [""]
-//    let latestEventsAraay = [""]
-//    let teamsAraay = [""]
-    
-//    fileprivate let collectionView:UICollectionView = {
-//        let layout = UICollectionViewFlowLayout()
-//        layout.scrollDirection = .horizontal
-//        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-//        cv.translatesAutoresizingMaskIntoConstraints = false
-//        cv.register(UpcomingEventCell.self, forCellWithReuseIdentifier: "upcomingEventCell")
-//        return cv
-//    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,19 +56,18 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         teamsCollectionView.delegate = self
         teamsCollectionView.dataSource = self
         
+        //indicator
         indicator.center = self.view.center
         self.view.addSubview(indicator)
         indicator.startAnimating()
         
+        //presenter
         presenter = LeaguesDetailsPresenter(NWService: NetworkService())
         presenter.attachView(view: self)
+        presenter.getEventsFromAF(myEndPoint: legID)
+        //presenter.getTeamsFromAF(myEndPoint: legID)
         
-      //  presenter.getEventsFromAF(myEndPoint: myLeagueResult.leagueID)
-         presenter.getEventsFromAF(myEndPoint: legID)
-        
-    //  presenter.getUpcomingEventsFromAF(myEndPoint: legID)
-        
-        //upcominCell
+        //upcominCell Layoout
        let upcomingEventCell_layout=UICollectionViewFlowLayout()
         upcomingEventCell_layout.scrollDirection = .horizontal
         upcomingEventCell_layout.itemSize=CGSize(width:upComingEventsCollectionView.frame.width*0.75, height: upComingEventsCollectionView.frame.height)
@@ -88,32 +80,33 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         latestEventsCollectionView.collectionViewLayout=latestEventCell_layout
         
     
-        //team cell
+        //team cell Layout
         let teamCell_layout = UICollectionViewFlowLayout()
         teamCell_layout.scrollDirection = .horizontal
         teamCell_layout.itemSize = CGSize(width: teamsCollectionView.frame.width/3, height: teamsCollectionView.frame.height)
         teamsCollectionView.collectionViewLayout = teamCell_layout
         
-           print("leg \( myLeagueResult.leagueID)")
-         print("leg \( myLeagueResult.leagueName)")
+        //test......
+        print("leg \( myLeagueResult.leagueID)")
+        print("leg \( myLeagueResult.leagueName)")
         
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if(collectionView == upComingEventsCollectionView){
-           
+        if(collectionView == upComingEventsCollectionView)
+        {
         return 5
         }
-        else if(collectionView == latestEventsCollectionView){
-            //return latestEventsAraay.count
+        else if(collectionView == latestEventsCollectionView)
+        {
             return latestResultView.count
-           // return 5
-        
         }
-        else {
-           
-            return 20        }
+        else
+        {
+            return 20
+           // return teamResultView.count
+        }
        
     }
 
@@ -128,8 +121,8 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
             // assign dumy data to views inside cell
             upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sportbackground5.jpg")
             upcomingEvents_cell.eventName.text = "Event1"
-            upcomingEvents_cell.dateLabel.text = "23 May"
-            upcomingEvents_cell.timeLabel.text = "5:00 PM"
+            upcomingEvents_cell.dateLabel.text = "2022-11-11"
+            upcomingEvents_cell.timeLabel.text = "17:00 PM"
             
             return upcomingEvents_cell
         }
@@ -162,7 +155,10 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
             //teams_cell.backgroundColor = .green
             teams_cell.layer.cornerRadius = 12.0
             
-            teams_cell.teamImage.image = UIImage(named: "arsnalbadge")
+            /*let url = URL(string: teamResultView[indexPath.row].teamBadge)
+            teams_cell.teamImage.kf.setImage(with: url,placeholder: UIImage(named: "arsnalbadge"))
+            teams_cell.teamNameLabel.text = teamResultView[indexPath.row].teamName*/
+                teams_cell.teamImage.image = UIImage(named: "arsnalbadge")
             teams_cell.teamNameLabel.text = "Arsnal"
             return teams_cell
         }
@@ -186,28 +182,14 @@ extension LeaguesDetailsViewController : SportsProtocol {
             var res:EventsValues=EventsValues(eventName: item.eventName , eventStatus: item.eventStatus , eventImage: item.eventImage, firstTeamName: item.firstTeamName, secondTeamName: item.secondTeamName, eventDate: item.eventDate, eventTime: item.eventTime, firstTeamScore: item.firstTeamScore, secondTeamScore: item.secondTeamScore)
             return res
         })
-        /*
-        upcomingResultView = presenter.upcommingResultFromAF.map({ (item) -> EventsValues in
-            var res:EventsValues=EventsValues(eventName: item.eventName , eventStatus: item.eventStatus , eventImage: item.eventImage, firstTeamName: item.firstTeamName, secondTeamName: item.secondTeamName, eventDate: item.eventDate, eventTime: item.eventTime, firstTeamScore: item.firstTeamScore, secondTeamScore: item.secondTeamScore)
-            return res
-        })
- */
-        /*
-        if latestResultView.count==0{
-                   latestEventsCollectionView.isHidden=true
-                   let img=UIImageView(frame: CGRect(x:50,y:400,width:100,height:100))
-                        img.image=UIImage(systemName: "icloud.slash")
-                        img.tintColor = .gray
-                        self.view.addSubview(img)
-                        let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
-                        labelNoData.text="No Data"
-                        labelNoData.textAlignment = .center
-                        self.view.addSubview(labelNoData)
-               }
- */
+        /*teamResultView = presenter.TeamResultFromAF.map({(item) -> TeamsValues in
+            var teamResult:TeamsValues = TeamsValues(teamBadge: item.teamBadge, teamName: item.teamName, stadiumImage: item.stadiumImage, stadiumName: item.stadiumName, stadiumDescription: item.stadiumDescription, stadiumCapacity: item.stadiumCapacity, stadiumLocation: item.stadiumLocation, manager: item.manager, formedYear: item.formedYear, facebookLink: item.facebookLink, instgramLink: item.instgramLink, twitterLink: item.twitterLink, youtubeLink: item.youtubeLink)
+            return teamResult
+        })*/
+        
         self.latestEventsCollectionView.reloadData()
      //  self.upComingEventsCollectionView.reloadData()
-        //self.teamsCollectionView.reloadData()
+       // self.teamsCollectionView.reloadData()
       
 
  
@@ -215,4 +197,22 @@ extension LeaguesDetailsViewController : SportsProtocol {
 }
    
    
-       
+/*
+upcomingResultView = presenter.upcommingResultFromAF.map({ (item) -> EventsValues in
+    var res:EventsValues=EventsValues(eventName: item.eventName , eventStatus: item.eventStatus , eventImage: item.eventImage, firstTeamName: item.firstTeamName, secondTeamName: item.secondTeamName, eventDate: item.eventDate, eventTime: item.eventTime, firstTeamScore: item.firstTeamScore, secondTeamScore: item.secondTeamScore)
+    return res
+})
+*/
+/*
+if latestResultView.count==0{
+           latestEventsCollectionView.isHidden=true
+           let img=UIImageView(frame: CGRect(x:50,y:400,width:100,height:100))
+                img.image=UIImage(systemName: "icloud.slash")
+                img.tintColor = .gray
+                self.view.addSubview(img)
+                let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
+                labelNoData.text="No Data"
+                labelNoData.textAlignment = .center
+                self.view.addSubview(labelNoData)
+       }
+*/

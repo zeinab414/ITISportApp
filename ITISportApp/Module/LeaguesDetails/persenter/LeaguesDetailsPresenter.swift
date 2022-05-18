@@ -10,6 +10,8 @@ import Foundation
 class LeaguesDetailsPresenter {
     var latestResultFromAF:[EventsValues]!
     var upcommingResultFromAF:[EventsValues]!
+    var  TeamResultFromAF:[TeamsValues]!
+    
     weak var view : SportsProtocol!
     init(NWService : SportService){
            // self.NWService = NWService
@@ -36,6 +38,19 @@ class LeaguesDetailsPresenter {
         service.fetchUpcomingEventsResultWithAF(endPoint: myEndPoint){[weak self] (result1) in
                
             self?.upcommingResultFromAF = result1 ?? []
+                
+                 DispatchQueue.main.async {
+                     self?.view.stopAnimating()
+                     self?.view.renderTableView()
+                 }
+             }
+         }
+    // Teammmmmmmmmmmmms
+    func getTeamsFromAF(myEndPoint:String){
+             let service=NetworkService()
+        service.fetchTeamsResultWithAF(endPoint: myEndPoint){[weak self] (result1) in
+               
+                 self?.TeamResultFromAF = result1 ?? []
                 
                  DispatchQueue.main.async {
                      self?.view.stopAnimating()

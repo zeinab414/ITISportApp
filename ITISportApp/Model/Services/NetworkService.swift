@@ -27,16 +27,38 @@ struct EventsValues {
     var firstTeamScore:String=""
     var secondTeamScore:String=""
 }
+struct TeamsValues {
+    //TeamCollectionView
+    var teamBadge:String = ""
+    var teamName:String = ""
+    //TeamDetails
+    var stadiumImage:String = ""
+    var stadiumName:String = ""
+    var stadiumDescription:String = ""
+    var stadiumCapacity:String = ""
+    var stadiumLocation:String = ""
+    var manager:String = ""
+    var formedYear:String = ""
+    var facebookLink:String = ""
+    var instgramLink:String = ""
+    var twitterLink:String = ""
+    var youtubeLink:String = ""
+}
 protocol SportService{
-//  static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void)
+    // All Sports
     func fetchSportResultWithAF(complitionHandler: @escaping ([ResultView]?) -> Void) ->Array<ResultView>
+    // All Leagues
     func fetchSLeagesResultWithAF(endPoint:String,complitionHandler: @escaping ([LeaguesValues]?) -> Void) ->Array<LeaguesValues>
-    
-    
-    func fetchEventsResultWithAF(endPoint:String,complitionHandler: @escaping ([EventsValues]?) -> Void) ->Array<EventsValues>
-    //func fetchEventsResultWithAF() ->Array<EventsValues>
-    
+    // Leagues Details...
+    // Upcoming Events
     func fetchUpcomingEventsResultWithAF(endPoint:String,complitionHandler: @escaping ([EventsValues]?) -> Void) ->Array<EventsValues>
+    //Latest events
+    func fetchEventsResultWithAF(endPoint:String,complitionHandler: @escaping ([EventsValues]?) -> Void) ->Array<EventsValues>
+    // All Teams
+    func fetchTeamsResultWithAF(endPoint:String,complitionHandler: @escaping ([TeamsValues]?) -> Void) ->Array<TeamsValues>
+    
+    
+  
 }
 
  
@@ -47,6 +69,7 @@ var myData:[ResultView] = []
 var myLeaguesData:[LeaguesValues] = []
 var latestEventsData:[EventsValues] = []
 var upcomingEventsData:[EventsValues] = []
+    var teamsData:[TeamsValues] = []
 /*
 static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
     let url = URL(string: "https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
@@ -184,7 +207,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                         }
                       
  
-                        print("eventttt:  \( i ["dateEvent"].stringValue)")
+                      //  print("eventttt:  \( i ["dateEvent"].stringValue)")
                         
                     }
                     
@@ -200,4 +223,29 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
            return upcomingEventsData
             
        }
+    func fetchTeamsResultWithAF(endPoint:String,complitionHandler: @escaping ([TeamsValues]?) -> Void) ->Array<TeamsValues>{
+        Alamofire.request("https://www.thesportsdb.com/api/v1/json/2/search_all_teams.php", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
+             switch responseData.result{
+             case .success:
+            
+                 let myResult = try? JSON(data: responseData.data!)
+                 let resultArray = myResult!["teams"]
+                 for i in resultArray.arrayValue {
+                     var teamsValues: TeamsValues = TeamsValues(teamBadge: i["strTeamBadge"].stringValue, teamName: i["strTeam"].stringValue, stadiumImage: i["strStadiumThumb"].stringValue, stadiumName: i["strStadium"].stringValue, stadiumDescription: i["strStadiumDescription"].stringValue, stadiumCapacity: i["intStadiumCapacity"].stringValue, stadiumLocation: i["strStadiumLocation"].stringValue, manager: i["strManager"].stringValue, formedYear: i["intFormedYear"].stringValue, facebookLink: i["strFacebook"].stringValue, instgramLink: i["strInstagram"].stringValue, twitterLink: i["strTwitter"].stringValue, youtubeLink: i["strYoutube"].stringValue)
+                     self.teamsData.append(teamsValues)
+                    print("TeamNaaaame:  \( i ["strTeam"].stringValue)")
+                 }
+                
+                 complitionHandler(self.teamsData)
+              
+                print(self.teamsData[3].teamName)
+             case .failure:
+                 print("Can not get data")
+                 complitionHandler(nil)
+                 break
+             }
+         }
+        return teamsData
+         
+    }
 }
