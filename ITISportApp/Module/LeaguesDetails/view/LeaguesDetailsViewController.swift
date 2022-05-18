@@ -131,10 +131,11 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
             upcomingEvents_cell.layer.cornerRadius = 20.0
             
             // assign dumy data to views inside cell
-            upcomingEvents_cell.cellbackgroundImage.image = UIImage(named: "sportbackground5.jpg")
+            let url = URL(string: upcomingResultView[indexPath.row].eventImage)
+            upcomingEvents_cell.cellbackgroundImage.kf.setImage(with: url,placeholder: UIImage(named: "sportbackground5.jpg"))
             upcomingEvents_cell.eventName.text = upcomingResultView[indexPath.row].eventName
-            upcomingEvents_cell.dateLabel.text = "2022-11-11"
-            upcomingEvents_cell.timeLabel.text = "17:00 PM"
+            upcomingEvents_cell.dateLabel.text = upcomingResultView[indexPath.row].eventDate
+            upcomingEvents_cell.timeLabel.text = upcomingResultView[indexPath.row].eventTime
             
             return upcomingEvents_cell
         }
@@ -163,16 +164,11 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         }
         let teams_cell = collectionView.dequeueReusableCell(withReuseIdentifier: "teamscell", for: indexPath) as! TeamsCollectionViewCell
         if collectionView==teamsCollectionView {
-            
-            
-            //teams_cell.backgroundColor = .green
             teams_cell.layer.cornerRadius = 12.0
             
             let url = URL(string: teamResultView[indexPath.row].teamBadge)
             teams_cell.teamImage.kf.setImage(with: url,placeholder: UIImage(named: "arsnalbadge"))
             teams_cell.teamNameLabel.text = teamResultView[indexPath.row].teamName
-                //teams_cell.teamImage.image = UIImage(named: "arsnalbadge")
-            //teams_cell.teamNameLabel.text = "Arsnal"
             return teams_cell
         }
         else{

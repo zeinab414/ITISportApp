@@ -165,7 +165,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                     let myResult = try? JSON(data: responseData.data!)
                     let resultArray = myResult!["events"]
                     for i in resultArray.arrayValue {
-                        if(i ["strStatus"].stringValue == "Match Finished"){
+                        if(self.compareDate(eventDate: i["dateEvent"].stringValue) == 2 || self.compareDate(eventDate: i["dateEvent"].stringValue) == 1 ){
                         var eventValues: EventsValues = EventsValues(eventName: i ["strEvent"].stringValue, eventStatus: i ["strStatus"].stringValue, eventImage: i ["strThumb"].stringValue, firstTeamName: i ["strHomeTeam"].stringValue, secondTeamName: i ["strAwayTeam"].stringValue, eventDate: i ["dateEvent"].stringValue, eventTime: i ["strTime"].stringValue, firstTeamScore: i ["intHomeScore"].stringValue, secondTeamScore: i ["intAwayScore"].stringValue)
                             self.latestEventsData.append(eventValues)
                         }
@@ -202,7 +202,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                     let myResult = try? JSON(data: responseData.data!)
                     let resultArray = myResult!["events"]
                     for i in resultArray.arrayValue {
-                        if(i ["strStatus"].stringValue == "Match Finished"){
+                        if(self.compareDate(eventDate: i["dateEvent"].stringValue) == 3){
                         var eventValues: EventsValues = EventsValues(eventName: i ["strEvent"].stringValue, eventStatus: i ["strStatus"].stringValue, eventImage: i ["strThumb"].stringValue, firstTeamName: i ["strHomeTeam"].stringValue, secondTeamName: i ["strAwayTeam"].stringValue, eventDate: i ["dateEvent"].stringValue, eventTime: i ["strTime"].stringValue, firstTeamScore: i ["intHomeScore"].stringValue, secondTeamScore: i ["intAwayScore"].stringValue)
                             self.upcomingEventsData.append(eventValues)
                         }
@@ -243,7 +243,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                 
                  complitionHandler(self.teamsData)
               
-                print(self.teamsData[3].teamName)
+                
              case .failure:
                  print("Can not get data")
                  complitionHandler(nil)

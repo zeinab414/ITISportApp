@@ -51,9 +51,9 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
                    
                                var myUrl=youtubeLink
                                if(myUrl.isEmpty){
-                                   myUrl="https://www.youtube.com/watch?v=AcVtT2d8-kk"
+                                   myUrl="www.youtube.com/watch?v=AcVtT2d8-kk"
                                }
-                               youtubeUrl = NSURL(string:myUrl)!
+                               youtubeUrl = NSURL(string:"https://"+myUrl)!
                                UIApplication.shared.openURL(youtubeUrl as URL)
                            }
     }
