@@ -12,6 +12,7 @@
 		9BAF49D7C72EB3B90FF7FE38 /* Pods_ITISportAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4942DA0579E6DAA97353900E /* Pods_ITISportAppTests.framework */; };
 		EB1AE9E72830E2D30027BDD2 /* FavouriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */; };
 		EB1F5A26282DA85600D72A3C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = EB1F5A25282DA85600D72A3C /* Alamofire */; };
+		EB3A05442833D05300BE315A /* sportbackground5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB3A05432833D05300BE315A /* sportbackground5.jpg */; };
 		EB7ECBB928313DCF004098BB /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBB828313DCF004098BB /* DBService.swift */; };
 		EB7ECBBB28314273004098BB /* FavPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBBA28314273004098BB /* FavPresenter.swift */; };
 		EB7ECBBD2831815B004098BB /* NetworkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7ECBBC2831815B004098BB /* NetworkConnection.swift */; };
@@ -79,6 +80,7 @@
 		DF19A620EFA65B0A159F6563 /* Pods-ITISportApp-ITISportAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ITISportApp-ITISportAppUITests/Pods-ITISportApp-ITISportAppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		E1B83DD800E7F3B45C470E86 /* Pods_ITISportApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITISportApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB1AE9E62830E2D30027BDD2 /* FavouriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTableViewCell.swift; sourceTree = "<group>"; };
+		EB3A05432833D05300BE315A /* sportbackground5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = sportbackground5.jpg; path = ../../../../sportbackground5.jpg; sourceTree = "<group>"; };
 		EB7ECBB828313DCF004098BB /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
 		EB7ECBBA28314273004098BB /* FavPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavPresenter.swift; sourceTree = "<group>"; };
 		EB7ECBBC2831815B004098BB /* NetworkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConnection.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 			children = (
 				FFC385342833C012005B13A6 /* sportbackground5.jpg */,
 				EBD433DF282FBC6100BEC085 /* you.jpg */,
+				EB3A05432833D05300BE315A /* sportbackground5.jpg */,
 				FF19673E282FD18B00E4E339 /* sport.jpeg */,
 				EBC8192B282BFCB300762FA7 /* Assets.xcassets */,
 			);
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFC385352833C012005B13A6 /* sportbackground5.jpg in Resources */,
+				EB3A05442833D05300BE315A /* sportbackground5.jpg in Resources */,
 				EBD433E0282FBC6100BEC085 /* you.jpg in Resources */,
 				EBC8192F282BFCB300762FA7 /* LaunchScreen.storyboard in Resources */,
 				EBC8192C282BFCB300762FA7 /* Assets.xcassets in Resources */,

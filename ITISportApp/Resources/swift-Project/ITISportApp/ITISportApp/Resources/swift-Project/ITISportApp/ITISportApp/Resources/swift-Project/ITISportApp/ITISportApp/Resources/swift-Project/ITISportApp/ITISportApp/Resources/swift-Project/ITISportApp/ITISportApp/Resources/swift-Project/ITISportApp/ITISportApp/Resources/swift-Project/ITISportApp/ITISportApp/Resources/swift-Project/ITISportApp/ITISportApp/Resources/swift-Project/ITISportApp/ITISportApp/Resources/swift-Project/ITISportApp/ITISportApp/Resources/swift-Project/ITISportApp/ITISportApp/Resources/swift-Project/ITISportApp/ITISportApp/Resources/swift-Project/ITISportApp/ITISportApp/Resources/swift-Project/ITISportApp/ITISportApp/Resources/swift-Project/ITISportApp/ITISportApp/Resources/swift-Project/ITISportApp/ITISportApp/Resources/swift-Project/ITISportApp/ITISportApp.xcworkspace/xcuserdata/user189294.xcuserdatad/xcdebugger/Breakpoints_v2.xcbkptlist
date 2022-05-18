@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "731591B4-DD65-448A-A312-322A72038816"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "01138BD5-CE46-4597-9B13-3710036D90D1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ITISportApp/Module/LeaguesDetails/view/LeaguesDetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E91F4DA8-D396-4258-A0F6-9F930AB41957"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ITISportApp/Module/LeaguesDetails/view/LeaguesDetailsCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "53E22B80-FF7F-4490-BC68-32E138C8E9A9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ITISportApp/Module/Leagues/View/LeagsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "tableView(_:didSelectRowAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "53E22B80-FF7F-4490-BC68-32E138C8E9A9 - db44d92838307468"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITISportApp.LeagsViewController.LeagsTableView.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "ITISportApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user189294/Documents/swift-Project/ITISportApp/ITISportApp/Module/Leagues/View/LeagsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "53E22B80-FF7F-4490-BC68-32E138C8E9A9 - 52a4017bb4ffa074"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITISportApp.LeagsViewController.LeagsTableView.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "ITISportApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user189294/Documents/swift-Project/ITISportApp/ITISportApp/Module/Leagues/View/LeagsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "155">
+               </Location>
+               <Location
+                  uuid = "53E22B80-FF7F-4490-BC68-32E138C8E9A9 - a983058016dc6eb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITISportApp.LeagsViewController.LeagsTableView.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "ITISportApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user189294/Documents/swift-Project/ITISportApp/ITISportApp/Module/Leagues/View/LeagsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "59">
+               </Location>
+               <Location
+                  uuid = "53E22B80-FF7F-4490-BC68-32E138C8E9A9 - 28bec436e7982f40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITISportApp.LeagsViewController.LeagsTableView.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ITISportApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user189294/Documents/swift-Project/ITISportApp/ITISportApp/Module/Leagues/View/LeagsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "53E22B80-FF7F-4490-BC68-32E138C8E9A9 - 616f1e39f007924"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITISportApp.LeagsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ITISportApp.LeagsViewController"
+                  moduleName = "ITISportApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user189294/Documents/swift-Project/ITISportApp/ITISportApp/Module/Leagues/View/LeagsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "901">
+               </Location>
+               <Location
+                  uuid = "53E22B80-FF7F-4490-BC68-32E138C8E9A9 - 1f8c6def0a6e242f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ITISportApp.LeagsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ITISportApp.LeagsViewController&gt;"
+                  moduleName = "ITISportApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/user189294/Documents/swift-Project/ITISportApp/ITISportApp/Module/Leagues/View/LeagsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "836">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
