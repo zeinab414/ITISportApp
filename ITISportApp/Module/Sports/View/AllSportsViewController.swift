@@ -93,8 +93,7 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
           
            
          //  return CGSize(width: UIScreen.main.bounds.width/CGFloat(resultView.count/2), height: UIScreen.main.bounds.height/CGFloat(resultView.count))
-          
-            
+        
     
            return CGSize(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height/CGFloat(resultView.count))
                 }

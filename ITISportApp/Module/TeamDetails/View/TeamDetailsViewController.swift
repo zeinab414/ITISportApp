@@ -15,6 +15,7 @@ class TeamDetailsViewController: UIViewController {
   
        var resultView:TeamsValues=TeamsValues()
     
+    @IBOutlet weak var stadiumDecTextView: UITextView!
     @IBOutlet weak var teamBadgeImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var stadiumImageView: UIImageView!
@@ -71,6 +72,7 @@ class TeamDetailsViewController: UIViewController {
         stadiumImageView.kf.setImage(with: stdium_url,placeholder: UIImage(named:"arsnalstaduim"))
         let teamBadge_url = URL(string: resultView.teamBadge)
         teamBadgeImageView.kf.setImage(with: teamBadge_url,placeholder: UIImage(named:"arsnalbadge"))
+        stadiumDecTextView.text = resultView.stadiumDescription
         
        
     }
