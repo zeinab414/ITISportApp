@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,UICollectionViewDataSource {
+class LeaguesDetailsViewController: UIViewController {
     
     //struct obj
     var legID:String=""
@@ -92,9 +92,18 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         print("leg \( myLeagueResult.leagueName)")
         
     }
+    
+    
+
+ 
+  
+
+}
+
+extension LeaguesDetailsViewController : UICollectionViewDelegate,UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == teamsCollectionView{
-        var selectedIndex=indexPath.row
+        //var selectedIndex=indexPath.row
     
         let vc = storyboard?.instantiateViewController(withIdentifier: "teamDetailsID") as? TeamDetailsViewController
             vc?.resultView = teamResultView[indexPath.row]
@@ -105,18 +114,14 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if(collectionView == upComingEventsCollectionView){
                     return upcomingResultView.count
-               // return 5
                 }
                  if(collectionView == latestEventsCollectionView){
-                    //return latestEventsAraay.count
+                    
                     return latestResultView.count
-                   // return 5
-                
                 }
                 if(collectionView == teamsCollectionView) {
                    
                     return teamResultView.count
-                    
                 }
                 return 0
        
@@ -176,11 +181,6 @@ class LeaguesDetailsViewController: UIViewController ,UICollectionViewDelegate,U
         }
         
     }
-    
-
- 
-  
-
 }
 extension LeaguesDetailsViewController : SportsProtocol {
     func stopAnimating() {
