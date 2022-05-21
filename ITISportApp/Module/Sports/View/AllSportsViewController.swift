@@ -20,50 +20,23 @@ struct ResultView{
 class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICollectionViewDataSource {
     @IBOutlet weak var allSportsCollectionView: UICollectionView!
     var selectedIndex:Int=0
-    
-    //list
-    //vars
     let indicator = UIActivityIndicatorView(style: .large)
     var presenter : AllSportsPresenter!
     // Modle for View
     var resultView: [ResultView]=[] // var resultView: [ResultView]!
     //end
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return resultView.count
-        
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sportCell", for: indexPath) as! SportCellCollectionViewCell
-        let url = URL(string: resultView[indexPath.row].image)
-        cell.sportName.text = resultView[indexPath.row].title
-      //  cell.sportImage.image = UIImage(named: "newfilmicon.png")
-        cell.sportImage.kf.setImage(with: url)
-        return cell
-    }
-  
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let service = NetworkService()
-       // service.fetchEventsResultWithAF()
-        
-       /*
-        let layout=UICollectionViewFlowLayout()
-        layout.itemSize=CGSize(width:allSportsCollectionView.frame.width/3, height: 200)
-        allSportsCollectionView.collectionViewLayout=layout
-        */
+       
         allSportsCollectionView.collectionViewLayout = UICollectionViewFlowLayout()
-
-               //
                if let layout = allSportsCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout{
                         layout.minimumLineSpacing = 0
                     layout.minimumInteritemSpacing = 0
                         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-                      //  let size = CGSize(width:(mycollectionsport!.bounds.width-165)/2, height: 220)
+                     
                     let size = CGSize(width : allSportsCollectionView.frame.width * 0.44999 , height: allSportsCollectionView.frame.height * 0.249)
-                  // CGSize(width: mycollectionsport.frame.size.width/3.5, height: mycollectionsport.frame.size.height/4)
                         layout.itemSize = size
                }
         if NetworkConnection.shared.isConnected{
@@ -88,18 +61,25 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
                               self.view.addSubview(labelNoData)
         }
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+           return resultView.count
+           
+       }
+       
+       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "sportCell", for: indexPath) as! SportCellCollectionViewCell
+           let url = URL(string: resultView[indexPath.row].image)
+           cell.sportName.text = resultView[indexPath.row].title
+       
+           cell.sportImage.kf.setImage(with: url)
+           return cell
+       }
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-          
-           
-         //  return CGSize(width: UIScreen.main.bounds.width/CGFloat(resultView.count/2), height: UIScreen.main.bounds.height/CGFloat(resultView.count))
-        
-    
            return CGSize(width: UIScreen.main.bounds.width/2, height: UIScreen.main.bounds.height/CGFloat(resultView.count))
                 }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           // var index=allSportsCollectionView.indexPathForSelectedRow
-       // var index=allSportsCollectionView.indexPathsForSelectedItems
+        
         var index=allSportsCollectionView.indexPathsForSelectedItems?.startIndex
             var vc:LeagsViewController=segue.destination as! LeagsViewController
         vc.sportName=resultView [selectedIndex].title
@@ -114,14 +94,13 @@ class AllSportsViewController: UIViewController , UICollectionViewDelegate,UICol
            self.navigationController?.pushViewController(vc!, animated: true)
     }
 
-//leagueID
+
    
 }
 extension AllSportsViewController : SportsProtocol {
     func stopAnimating() {
         indicator.stopAnimating()
-        // I have the result
-        //presenter.result
+        
     }
     func renderTableView(){
         

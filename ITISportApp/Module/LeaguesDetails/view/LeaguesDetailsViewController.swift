@@ -87,24 +87,15 @@ class LeaguesDetailsViewController: UIViewController {
         teamCell_layout.itemSize = CGSize(width: teamsCollectionView.frame.width/3, height: teamsCollectionView.frame.height)
         teamsCollectionView.collectionViewLayout = teamCell_layout
         
-        //test......
-        print("leg \( myLeagueResult.leagueID)")
-        print("leg \( myLeagueResult.leagueName)")
-        
     }
-    
-    
 
- 
-  
 
 }
 
 extension LeaguesDetailsViewController : UICollectionViewDelegate,UICollectionViewDataSource  {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == teamsCollectionView{
-        //var selectedIndex=indexPath.row
-    
+     
         let vc = storyboard?.instantiateViewController(withIdentifier: "teamDetailsID") as? TeamDetailsViewController
             vc?.resultView = teamResultView[indexPath.row]
            self.navigationController?.pushViewController(vc!, animated: true)
@@ -214,22 +205,4 @@ extension LeaguesDetailsViewController : SportsProtocol {
 }
    
    
-/*
-upcomingResultView = presenter.upcommingResultFromAF.map({ (item) -> EventsValues in
-    var res:EventsValues=EventsValues(eventName: item.eventName , eventStatus: item.eventStatus , eventImage: item.eventImage, firstTeamName: item.firstTeamName, secondTeamName: item.secondTeamName, eventDate: item.eventDate, eventTime: item.eventTime, firstTeamScore: item.firstTeamScore, secondTeamScore: item.secondTeamScore)
-    return res
-})
-*/
-/*
-if latestResultView.count==0{
-           latestEventsCollectionView.isHidden=true
-           let img=UIImageView(frame: CGRect(x:50,y:400,width:100,height:100))
-                img.image=UIImage(systemName: "icloud.slash")
-                img.tintColor = .gray
-                self.view.addSubview(img)
-                let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
-                labelNoData.text="No Data"
-                labelNoData.textAlignment = .center
-                self.view.addSubview(labelNoData)
-       }
-*/
+

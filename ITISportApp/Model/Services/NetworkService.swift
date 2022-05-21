@@ -71,38 +71,7 @@ var myLeaguesData:[LeaguesValues] = []
 var latestEventsData:[EventsValues] = []
 var upcomingEventsData:[EventsValues] = []
     var teamsData:[TeamsValues] = []
-/*
-static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
-    let url = URL(string: "https://www.thesportsdb.com/api/v1/json/2/all_sports.php")
-    guard let newUrl = url else{
-        return
-    }
-    let request = URLRequest(url: newUrl)
-    let session = URLSession(configuration: URLSessionConfiguration.default)
-    //URLSession.shared.dataTask(with: request) { (data, response, error) in
-    //    //
-    //}
-    let task = session.dataTask(with: request) { (data, response, error) in
-        guard let data = data else{
-            return
-        }
-        do{
-            let result = try JSONDecoder().decode(MySportResult.self, from: data)
-            
-            complitionHandler(result)
-        }catch let error{
-            print("Here")
-            print(error.localizedDescription)
-            complitionHandler(nil)
-        }
-        
-        
-    }
 
-    task.resume()
-    
-    }
- */
     
     func fetchSportResultWithAF(complitionHandler: @escaping ([ResultView]?) -> Void ) ->Array<ResultView>{
         Alamofire.request("https://www.thesportsdb.com/api/v1/json/2/all_sports.php", method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil).responseJSON { (responseData) in
@@ -120,7 +89,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                  print(self.myData[3].title)
               //   print(self.myData[3].sportImage)
              case .failure:
-                 print("Can not get data")
+                 print("Failed !!!")
                  complitionHandler(nil)
                  break
              }
@@ -146,7 +115,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                   
                
                 case .failure:
-                    print("Can not get data")
+                   print("Failed !!!")
                    complitionHandler(nil)
                     break
                 }
@@ -169,13 +138,8 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                         var eventValues: EventsValues = EventsValues(eventName: i ["strEvent"].stringValue, eventStatus: i ["strStatus"].stringValue, eventImage: i ["strThumb"].stringValue, firstTeamName: i ["strHomeTeam"].stringValue, secondTeamName: i ["strAwayTeam"].stringValue, eventDate: i ["dateEvent"].stringValue, eventTime: i ["strTime"].stringValue, firstTeamScore: i ["intHomeScore"].stringValue, secondTeamScore: i ["intAwayScore"].stringValue)
                             self.latestEventsData.append(eventValues)
                         }
-                        /*
-                        else{
-                        var eventValues: EventsValues = EventsValues(eventName: i ["strEvent"].stringValue, eventStatus: i ["strStatus"].stringValue, eventImage: i ["strThumb"].stringValue, firstTeamName: i ["strHomeTeam"].stringValue, secondTeamName: i ["strAwayTeam"].stringValue, eventDate: i ["dateEvent"].stringValue, eventTime: i ["strTime"].stringValue, firstTeamScore: i ["intHomeScore"].stringValue, secondTeamScore: i ["intAwayScore"].stringValue)
-                            self.upcomingEventsData.append(eventValues)
-                        }
- */
-                        print("eventttt:  \( i ["dateEvent"].stringValue)")
+                     
+                       
                         
                     }
                     
@@ -183,7 +147,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                   
                
                 case .failure:
-                    print("Can not get data")
+                  print("Failed !!!")
                   complitionHandler(nil)
                     break
                 }
@@ -208,7 +172,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                         }
                       
  
-                      //  print("eventttt:  \( i ["dateEvent"].stringValue)")
+                     
                         
                     }
                     
@@ -216,7 +180,7 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                   
                
                 case .failure:
-                    print("Can not get data")
+                  print("Failed !!!")
                   complitionHandler(nil)
                     break
                 }
@@ -238,14 +202,14 @@ static func fetchResult(complitionHandler : @escaping (MySportResult?) -> Void){
                  for i in resultArray.arrayValue {
                      var teamsValues: TeamsValues = TeamsValues(teamBadge: i["strTeamBadge"].stringValue, teamName: i["strTeam"].stringValue, stadiumImage: i["strStadiumThumb"].stringValue, stadiumName: i["strStadium"].stringValue, stadiumDescription: i["strStadiumDescription"].stringValue, stadiumCapacity: i["intStadiumCapacity"].stringValue, stadiumLocation: i["strStadiumLocation"].stringValue, manager: i["strManager"].stringValue, formedYear: i["intFormedYear"].stringValue, facebookLink: i["strFacebook"].stringValue, instgramLink: i["strInstagram"].stringValue, twitterLink: i["strTwitter"].stringValue, youtubeLink: i["strYoutube"].stringValue)
                      self.teamsData.append(teamsValues)
-                    print("TeamNaaaame:  \( i ["strTeam"].stringValue)")
+                  
                  }
                 
                  complitionHandler(self.teamsData)
               
                 
              case .failure:
-                 print("Can not get data")
+                 print("Failed !!!")
                  complitionHandler(nil)
                  break
              }

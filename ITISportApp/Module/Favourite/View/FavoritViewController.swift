@@ -12,17 +12,17 @@ import Kingfisher
 class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
  @IBOutlet weak var FavTableView: UITableView!
    
-      var presenter :FavPresenter!
-    var resultArray:[NSManagedObject]=[]
+   var presenter :FavPresenter!
+   var resultArray:[NSManagedObject]=[]
    var appDelegate:AppDelegate=UIApplication.shared.delegate as! AppDelegate
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
    
-        FavTableView.dataSource = self
-       FavTableView.delegate = self
+         FavTableView.dataSource = self
+         FavTableView.delegate = self
          presenter=FavPresenter()
         
       
@@ -33,7 +33,7 @@ class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewD
                   img.tintColor = .gray
                  img.tag=20
                 let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.maxY+15, width: img.frame.width, height: 30))
-                labelNoData.text="No Data"
+                labelNoData.text="No Data!!!!"
                 labelNoData.textAlignment = .center
                 labelNoData.tag=21
                 if(resultArray.count == 0){

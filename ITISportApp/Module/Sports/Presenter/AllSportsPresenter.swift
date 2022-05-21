@@ -9,32 +9,16 @@
 import Foundation
 
 class AllSportsPresenter {
-    var result : [Sport]! // model
+    var result : [Sport]! 
     var resultFromAF:[ResultView]=[]
-      weak var view : SportsProtocol!  // DI
+      weak var view : SportsProtocol!
       
       init(NWService : SportService){
-         // self.NWService = NWService
-          //NWService = NetworkService() // no Dependency Injection
+        
       }
       func attachView(view: SportsProtocol){
           self.view = view
       }
-    /*
-      func getSports(){
-          NetworkService.fetchResult {[weak self] (result) in
-              
-              print(result?.sports[0].strSport ?? "")
-              self?.result = result?.sports
-              //self.tableView.reloadData()
-              DispatchQueue.main.async {
-                  self?.view.stopAnimating()
-                  self?.view.renderTableView()
-                  //self.label?.text = result.items[0].header ?? ""
-              }
-          }
-      }
- */
     
    func getSportsFromAF(){
           let service=NetworkService()

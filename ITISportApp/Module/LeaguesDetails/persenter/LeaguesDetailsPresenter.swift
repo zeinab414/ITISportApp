@@ -14,8 +14,7 @@ class LeaguesDetailsPresenter {
     
     weak var view : SportsProtocol!
     init(NWService : SportService){
-           // self.NWService = NWService
-            //NWService = NetworkService() // no Dependency Injection
+          
         }
         func attachView(view: SportsProtocol){
             self.view = view
@@ -45,7 +44,7 @@ class LeaguesDetailsPresenter {
                  }
              }
          }
-    // Teammmmmmmmmmmmms
+    // Team
     func getTeamsFromAF(myEndPoint:String){
              let service=NetworkService()
         service.fetchTeamsResultWithAF(endPoint: myEndPoint){[weak self] (result1) in

@@ -11,8 +11,7 @@ class LeaguesPresenter{
      var resultFromAF:[LeaguesValues]!
      weak var view : SportsProtocol!
     init(NWService : SportService){
-           // self.NWService = NWService
-            //NWService = NetworkService() // no Dependency Injection
+           
         }
         func attachView(view: SportsProtocol){
             self.view = view

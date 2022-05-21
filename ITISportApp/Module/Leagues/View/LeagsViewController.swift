@@ -29,8 +29,6 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
         cell.leagsImage.backgroundColor = .black
         
         cell.leagsName.text = resultView[indexPath.row].leagueName
-         //  cell.leagsName.text = sportName
-       // cell.leagsImage.image = UIImage(named: "sport.jpeg")
         let url = URL(string: resultView[indexPath.row].leagueImage)
         cell.leagsImage.kf.setImage(with: url)
         
@@ -41,17 +39,15 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
     @objc func displayYoutubeVideo(sender:UIButton){
         let myindexPath=IndexPath(row: sender.tag, section: 0)
         print("hello display")
-                       let youtubeId = "SxTYjptEzZs"
+        let youtubeId = "SxTYjptEzZs"
         youtubeLink=resultView[myindexPath.row].youtubeLink
-                           var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
-                           if UIApplication.shared.canOpenURL(youtubeUrl as URL){
-                               UIApplication.shared.openURL(youtubeUrl as URL)
-                           } else{
-                                 
-                   
-                               var myUrl=youtubeLink
-                               if(myUrl.isEmpty){
-                                   myUrl="www.youtube.com/watch?v=AcVtT2d8-kk"
+        var youtubeUrl = NSURL(string:"youtube://\(youtubeId)")!
+        if UIApplication.shared.canOpenURL(youtubeUrl as URL){
+               UIApplication.shared.openURL(youtubeUrl as URL)
+                    } else{
+                        var myUrl=youtubeLink
+                         if(myUrl.isEmpty){
+                             myUrl="www.youtube.com/watch?v=AcVtT2d8-kk"
                                }
                                youtubeUrl = NSURL(string:"https://"+myUrl)!
                                UIApplication.shared.openURL(youtubeUrl as URL)
@@ -82,36 +78,10 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
         presenter.attachView(view: self)
         
         presenter.getLeaguesFromAF(myEndPoint: sportName)
-      /*
-        if resultView.count==0{
-            LeagsTableView.isHidden=true
-            let img=UIImageView(frame: CGRect(x:50,y:100,width:100,height:100))
-                 img.image=UIImage(systemName: "icloud.splash")
-                 img.tintColor = .gray
-                 self.view.addSubview(img)
-                 let labelNoData=UILabel(frame: CGRect(x: img.frame.minX, y: img.frame.minY+15, width: img.frame.width, height: 30))
-                 labelNoData.text="No Data"
-                 labelNoData.textAlignment = .center
-                 self.view.addSubview(labelNoData)
-        }
-       */
- 
-     //   print("count: \(resultView.count)")
+      
  
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
-   
 
 }
 extension LeagsViewController : SportsProtocol {
