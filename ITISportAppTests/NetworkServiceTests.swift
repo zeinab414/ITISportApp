@@ -45,4 +45,17 @@ class NetworkServiceTests: XCTestCase {
         }
         waitForExpectations(timeout: 15, handler: nil)
     }
+    func testFetchTeamsResultWithAF(){
+         let myExpection = expectation(description:"wait of api");
+        networkService.fetchTeamsResultWithAF(endPoint: "BTCC") { (items) in
+            guard let items=items else{
+                XCTFail()
+                return
+            }
+        XCTAssertEqual(items.count, 14)
+            myExpection.fulfill()
+            
+        }
+        waitForExpectations(timeout: 15, handler: nil)
+    }
 }
