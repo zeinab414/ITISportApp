@@ -58,4 +58,32 @@ class NetworkServiceTests: XCTestCase {
         }
         waitForExpectations(timeout: 15, handler: nil)
     }
+    //hend........
+    func testfetchEventsResultWithAF(){
+         let myExpection = expectation(description:"wait of api");
+        networkService.fetchEventsResultWithAF(endPoint: "4328") { (items) in
+            guard let items=items else{
+                XCTFail()
+                return
+            }
+        XCTAssertEqual(items.count, 100)
+            myExpection.fulfill()
+            
+        }
+        waitForExpectations(timeout: 15, handler: nil)
+    }
+    
+    func testfetchUpcomingEventsResultWithA(){
+         let myExpection = expectation(description:"wait of api");
+        networkService.fetchUpcomingEventsResultWithAF(endPoint: "4416"){ (items) in
+            guard let items=items else{
+                XCTFail()
+                return
+            }
+        XCTAssertEqual(items.count, 12)
+            myExpection.fulfill()
+            
+        }
+        waitForExpectations(timeout: 15, handler: nil)
+    }
 }

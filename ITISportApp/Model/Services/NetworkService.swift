@@ -177,7 +177,9 @@ var upcomingEventsData:[EventsValues] = []
                     }
                     
                   complitionHandler(self.upcomingEventsData)
-                  
+                    
+                    print("enventsCount:\(self.upcomingEventsData.count)")
+                    
                
                 case .failure:
                   print("Failed !!!")
