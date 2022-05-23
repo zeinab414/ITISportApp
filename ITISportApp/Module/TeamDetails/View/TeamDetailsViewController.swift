@@ -12,8 +12,11 @@ import Kingfisher
 class TeamDetailsViewController: UIViewController {
    
     
-  
-       var resultView:TeamsValues=TeamsValues()
+    @IBOutlet weak var stadiumCapacityLabel: UILabel!
+   
+    @IBOutlet weak var stadiumLocarionLabel: UILabel!
+    @IBOutlet weak var managerLabel: UILabel!
+    var resultView:TeamsValues=TeamsValues()
     
     @IBOutlet weak var stadiumDecTextView: UITextView!
     @IBOutlet weak var teamBadgeImageView: UIImageView!
@@ -65,7 +68,9 @@ class TeamDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        stadiumCapacityLabel.text = resultView.stadiumCapacity
+        stadiumLocarionLabel.text = resultView.stadiumLocation
+        managerLabel.text = resultView.formedYear
         teamNameLabel.text=resultView.teamName
         stadiumNameLabel.text = resultView.stadiumName
         let stdium_url = URL(string: resultView.stadiumImage)
@@ -73,7 +78,7 @@ class TeamDetailsViewController: UIViewController {
         let teamBadge_url = URL(string: resultView.teamBadge)
         teamBadgeImageView.kf.setImage(with: teamBadge_url,placeholder: UIImage(named:"arsnalbadge"))
         stadiumDecTextView.text = resultView.stadiumDescription
-        
+    
        
     }
     
