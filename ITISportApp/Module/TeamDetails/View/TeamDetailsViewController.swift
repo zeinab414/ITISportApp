@@ -51,7 +51,7 @@ class TeamDetailsViewController: UIViewController {
                } else{
                    var url = resultView.youtubeLink
                   if(url == ""){
-                       url="www.youtube.com/watch?v=eRrMaxAE-SY"
+                       url="www.youtube.com/watch?v=AcVtT2d8-kk"
                    }
                    youtubeUrl = NSURL(string:"https://"+url)!
                    UIApplication.shared.openURL(youtubeUrl as URL)

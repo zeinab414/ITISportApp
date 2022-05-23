@@ -43,29 +43,15 @@ class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewD
                   self.view.addSubview(labelNoData)
                     
                 }
-                    
-                else{
-                    FavTableView.isHidden=false
-                    if let viewWithTag = self.view.viewWithTag(20) {
-                            viewWithTag.removeFromSuperview()
-                        }else{
-                            print("Error")
-                        }
-                    if let viewWithTag = self.view.viewWithTag(21) {
-                            viewWithTag.removeFromSuperview()
-                        }else{
-                            print("Error")
-                        }
-                    
-                         
-                }
-       
+               
         FavTableView.reloadData()
         
         
     }
     
-
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       
     return resultArray.count
@@ -75,8 +61,8 @@ class FavoritViewController: UIViewController,UITableViewDataSource,UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "favCell", for: indexPath) as! FavouriteTableViewCell
         
         cell.favLeagueImageView.layer.cornerRadius =  cell.favLeagueImageView.frame.height / 2
-    cell.favLeagueImageView.layer.masksToBounds = true
-        cell.favLeagueImageView.backgroundColor = .black
+        cell.favLeagueImageView.layer.masksToBounds = true
+        cell.favLeagueImageView.backgroundColor = .gray
         cell.favLeagueLable.text=resultArray[indexPath.row].value(forKey: "leagueName") as? String ?? ""
        // cell.favLeagueImageView.image=UIImage(named:"sport.jpeg")
         let url = URL(string: resultArray[indexPath.row].value(forKey: "leagueImage") as? String ?? "sport.jpeg")

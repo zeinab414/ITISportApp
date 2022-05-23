@@ -21,20 +21,29 @@ class DBService:DBProtocole{
        }
       func addLeague(favLeague:LeaguesValues){
           
+       
+        if isAreadyExistsOrNot(leagueId: favLeague.leagueID)==false{
+         
            let leagueEntity = NSEntityDescription.entity(forEntityName: "FavLeague", in: viewContext)
           let favouriteLeague = NSManagedObject(entity: leagueEntity!, insertInto: viewContext)
            
-        favouriteLeague.setValue(favLeague.leagueID, forKey: "leagueID")
+         favouriteLeague.setValue(favLeague.leagueID, forKey: "leagueID")
            favouriteLeague.setValue(favLeague.leagueImage, forKey: "leagueImage")
            favouriteLeague.setValue(favLeague.leagueName, forKey: "leagueName")
-        favouriteLeague.setValue(favLeague.youtubeLink, forKey: "youtubeLink")
-        favouriteLeague.setValue(favLeague.leagueCountry, forKey: "leagueCountry")
+          favouriteLeague.setValue(favLeague.youtubeLink, forKey: "youtubeLink")
+         favouriteLeague.setValue(favLeague.leagueCountry, forKey: "leagueCountry")
            do{
+          
                try viewContext.save()
                print("saved successfully")
+           
            }catch let error{
                print(error.localizedDescription)
            }
+        }else{
+            print("Alrady exists")
+        }
+      
        }
        
         func getLeagues() -> Array<NSManagedObject> {
@@ -46,6 +55,7 @@ class DBService:DBProtocole{
            }catch{
                print("Error in fetch data")
            }
+        
            return favouriteLeagues
        }
        
@@ -56,5 +66,16 @@ class DBService:DBProtocole{
       } catch let error as NSError {
           print("can not delete this row")
       }
+        
       }
+    
+    func isAreadyExistsOrNot(leagueId:String) -> Bool{
+    let favLeagues = getLeagues()
+        for league in favLeagues{
+            if league.value(forKey: "leagueID") as! String == leagueId{
+                return true
+            }
+        }
+        return false
+    }
 }

@@ -26,7 +26,7 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
         let cell = tableView.dequeueReusableCell(withIdentifier: "LeagsCell", for: indexPath) as! LeagesTableViewCell
         cell.leagsImage.layer.cornerRadius = cell.leagsImage.frame.height / 2
         cell.leagsImage.layer.masksToBounds = true
-        cell.leagsImage.backgroundColor = .black
+        cell.leagsImage.backgroundColor = .gray
         
         cell.leagsName.text = resultView[indexPath.row].leagueName
         let url = URL(string: resultView[indexPath.row].leagueImage)
@@ -80,7 +80,9 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
       
  
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 
 }
 extension LeagsViewController : SportsProtocol {
