@@ -58,9 +58,8 @@ class LeagsViewController: UIViewController,UITableViewDataSource,UITableViewDel
     vc?.legID = resultView[indexPath.row].leagueID
     vc?.legName = resultView[indexPath.row].leagueName
     vc?.myLeagueResult = resultView[indexPath.row]
-       self.navigationController?.pushViewController(vc!, animated: true)
-
-         
+    present(vc!, animated: true, completion: nil)
+      
      }
 
     @IBOutlet weak var LeagsTableView: UITableView!

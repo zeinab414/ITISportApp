@@ -98,7 +98,7 @@ extension LeaguesDetailsViewController : UICollectionViewDelegate,UICollectionVi
      
         let vc = storyboard?.instantiateViewController(withIdentifier: "teamDetailsID") as? TeamDetailsViewController
             vc?.resultView = teamResultView[indexPath.row]
-           self.navigationController?.pushViewController(vc!, animated: true)
+            present(vc!, animated: true, completion: nil)
         }
     }
     
