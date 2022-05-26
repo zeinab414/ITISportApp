@@ -1,5 +1,5 @@
 # ITISportApp
-IOS Mobile Application displays sports Using MVP Architecture Design Pattern, Sport API , and Core Data, Unit Teast.
+IOS Mobile Application displays sports Using MVP Architecture Design Pattern, The Sports DB API , and Core Data, Unit Teast.
 
 # Features:
 	- Choose any sport you need.
